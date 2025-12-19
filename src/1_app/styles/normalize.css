@@ -123,6 +123,7 @@ body {
  */
 a:where([class]) {
     display: inline-flex;
+    text-decoration: none;
 }
 
 /**
