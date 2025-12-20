@@ -15,6 +15,7 @@
     --color-black-800: #303030;
     --color-black-700: #474747;
     --color-black-600: #5e5e5e;
+    --color-black-100: #d1d1d1;
     --color-black-50: #e8e8e8;
     --color-black-25: #f4f4f4;
     --color-black-10: #f8f8f8;
@@ -30,4 +31,7 @@
     /* Sizes */
     --height-header: 72px;
     --width-sidebar: 280px;
+    --width-avatar: 40px;
+    /* Shadows */
+    --shadow-main: 0 4px 10px rgba(106, 99, 118, 0.1);
 }

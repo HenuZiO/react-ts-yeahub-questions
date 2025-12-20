@@ -12,6 +12,12 @@ import { YeaLogo } from '../6_shared/ui/logo/YeaLogo'
 
 import styles from './styles.module.css'
 import { Button } from '../6_shared/ui/button/Button'
+import { SettingsIcon } from '../6_shared/ui/icon/variants/SettingsIcon'
+import { cn } from '../6_shared/lib/utils/classNames'
+import { Container } from '../6_shared/ui/container/Container'
+import { ArrowLeftIcon } from '../6_shared/ui/icon/variants/ArrowLeftIcon'
+import { ArrowRightIcon } from '../6_shared/ui/icon/variants/ArrowRightIcon'
+import { NotebookIcon } from '../6_shared/ui/icon/variants/NotebookIcon'
 
 function App() {
     
@@ -45,7 +51,7 @@ function App() {
                                 <span>Мой профиль</span>
                             </a>
                         </li>
-                        
+
                         <li className={styles.accordion__expanded}>
                             <button
                                 className={styles.item__button}
@@ -74,7 +80,7 @@ function App() {
                                 </li>
                             </ul>
                         </li>
-                        
+
                         <li>
                             <button
                                 className={styles.item__button}
@@ -82,7 +88,7 @@ function App() {
                                 aria-expanded='false'
                                 aria-controls='blog-submenu'
                             >
-                                <BookIcon />
+                                <NotebookIcon />
                                 <span>Блог</span>
                                 <ChevroneDownIcon className={styles.icon__accordion} />
                             </button>
@@ -103,139 +109,190 @@ function App() {
                 </footer>
             </aside>
 
-            <header>
-                <h1>YeaHub - тренажер для подготовки к IT-собеседованиям</h1>
-                <div>
-                    <button type='button'>
-                        <img src='' alt='' width='20' height='20' loading='lazy' />
-                    </button>
-                    <img src='' alt='' width='40' height='40' loading='lazy' />
-                </div>
-            </header>
-            {/*<main>*/}
-            {/*    <nav>*/}
-            {/*        <ol>*/}
-            {/*            <li className={styles.list__item}>*/}
-            {/*                <a href='/'>*/}
-            {/*                    Обучение*/}
-            {/*                </a>*/}
-            {/*            </li>*/}
-            
-            {/*            <li className={styles.list__item}>*/}
-            {/*                <a href='/'>*/}
-            {/*                    Список вопросов*/}
-            {/*                </a>*/}
-            {/*            </li>*/}
-            {/*        </ol>*/}
-            {/*    </nav>*/}
-            
-            {/*    <div>*/}
-            {/*        <section>*/}
-            {/*            <h2>Вопросы React, JavaScript</h2>*/}
-            
-            {/*            <article>*/}
-            {/*                <header>*/}
-            {/*                    <img*/}
-            {/*                        src=''*/}
-            {/*                        alt=''*/}
-            {/*                        width='8'*/}
-            {/*                        height='8'*/}
-            {/*                        loading='lazy'*/}
-            {/*                        aria-hidden='true'*/}
-            {/*                    />*/}
-            {/*                    <h3>Что такое Virtual DOM, и как он работает?</h3>*/}
-            {/*                    <button type='button' aria-label='Развернуть ответ'>*/}
-            {/*                        <img src='' alt='' width='24' height='24' loading='lazy' />*/}
-            {/*                    </button>*/}
-            {/*                </header>*/}
-            
-            {/*                <div>*/}
-            {/*                    <dl>*/}
-            {/*                        <div>*/}
-            {/*                            <dt>Рейтинг</dt>*/}
-            {/*                            <dd>4</dd>*/}
-            {/*                        </div>*/}
-            {/*                        <div>*/}
-            {/*                            <dt>Сложность</dt>*/}
-            {/*                            <dd>10</dd>*/}
-            {/*                        </div>*/}
-            {/*                    </dl>*/}
-            
-            {/*                    <button type='button' aria-label='Вопрос - действия'>*/}
-            {/*                        Настройки*/}
-            {/*                    </button>*/}
-            {/*                </div>*/}
-            
-            {/*                <div>*/}
-            {/*                    <p>*/}
-            {/*                        Virtual DOM — это абстракция реального DOM, которая используется React для улучшения производительности.*/}
-            {/*                        Вместо того чтобы обновлять реальный DOM напрямую при каждом изменении состояния, React сначала обновляет виртуальный DOM, а затем сравнивает его с предыдущей версией, чтобы минимизировать количество операций с реальным DOM.*/}
-            {/*                        Этот процесс называется дифференциацией (reconciliation).*/}
-            {/*                    </p>*/}
-            {/*                    <pre>*/}
-            {/*                        <code>*/}
-            {/*                            [тут пример кода]*/}
-            {/*                        </code>*/}
-            {/*                    </pre>*/}
-            
-            {/*                </div>*/}
-            {/*            </article>*/}
-            
-            {/*            <nav aria-label='Пагинация'>*/}
-            {/*                <button type='button' aria-label='Предыдущая страница'>*/}
-            {/*                    {'<-'}*/}
-            {/*                </button>*/}
-            
-            {/*                <ul>*/}
-            {/*                    <li className={styles.list__item}>*/}
-            {/*                        <button type='button'>*/}
-            {/*                            1*/}
-            {/*                        </button>*/}
-            {/*                    </li>*/}
-            {/*                    <li className={styles.list__item}>*/}
-            {/*                        <button type='button'>*/}
-            {/*                            2*/}
-            {/*                        </button>*/}
-            {/*                    </li>*/}
-            {/*                    <li className={styles.list__item}>*/}
-            {/*                        <button type='button'>*/}
-            {/*                            3*/}
-            {/*                        </button>*/}
-            {/*                    </li>*/}
-            {/*                    <li className={styles.list__item}>*/}
-            {/*                        <button type='button'>*/}
-            {/*                            4*/}
-            {/*                        </button>*/}
-            {/*                    </li>*/}
-            
-            {/*                    <li className={styles.list__item}>*/}
-            {/*                        <span>...</span>*/}
-            {/*                    </li>*/}
-            
-            {/*                    <li className={styles.list__item}>*/}
-            {/*                        <button type='button'>*/}
-            {/*                            17*/}
-            {/*                        </button>*/}
-            {/*                    </li>*/}
-            
-            {/*                    <li className={styles.list__item}>*/}
-            {/*                        <button type='button'>*/}
-            {/*                            18*/}
-            {/*                        </button>*/}
-            {/*                    </li>*/}
-            {/*                </ul>*/}
-            
-            {/*                <button type='button' aria-label='Следующая страница'>*/}
-            {/*                    {'->'}*/}
-            {/*                </button>*/}
-            {/*            </nav>*/}
-            {/*        </section>*/}
-            
-            {/*        <section>*/}
-            {/*            Тут будут фильтра вопросов*/}
-            {/*        </section>*/}
-            {/*    </div>*/}
-            {/*</main>*/}
+            <div className={styles.page__content}>
+                <header className={styles.header}>
+                    <h1 className='visually-hidden'>YeaHub - тренажер для подготовки к IT-собеседованиям</h1>
+                    <div className={styles.header__menu}>
+                        <button className={styles.menu__settings} type='button'>
+                            <SettingsIcon size={20} />
+                        </button>
+                        <button>
+                            <img
+                                className={styles.menu__avatar}
+                                src='/images/profile_photo.png'
+                                alt='Profile Avatar'
+                                width='40'
+                                height='40'
+                                loading='lazy'
+                            />
+                        </button>
+                    </div>
+                </header>
+
+                <main>
+                    <Container>
+                        <nav className={styles.breadcrumbs}>
+                            <ol className={styles.breadcrumbs__list}>
+                                <li className={styles.breadcrumbs__list_item}>
+                                    <a className={styles.breadcrumbs__item_link} href='/'>
+                                        Обучение
+                                    </a>
+                                </li>
+
+                                <li className={styles.breadcrumbs__list_item}>
+                                    <a className={styles.breadcrumbs__item_link} href='/'>
+                                        Список вопросов
+                                    </a>
+                                </li>
+                            </ol>
+                        </nav>
+                    </Container>
+
+                    <Container className={styles.sections}>
+                        <section className={styles.section}>
+                            <h2 className={styles.section__title}>
+                                Вопросы React, JavaScript
+                            </h2>
+
+                            <article className={styles.question}>
+                                <header className={styles.question__header}>
+                                    <span
+                                        className={styles.question__icon}
+                                        aria-hidden='true'
+                                    ></span>
+                                    <h3 className={styles.question__title}>Что такое Virtual DOM, и как он работает?</h3>
+                                    <button
+                                        className={styles.question__toggle}
+                                        type='button'
+                                        aria-label='Развернуть ответ'
+                                        aria-expanded='true'
+                                        aria-controls='question-content-1'
+                                    >
+                                        <ChevroneUpIcon />
+                                    </button>
+                                </header>
+
+                                <div className={styles.question__content} id='question-content-1'>
+                                    <footer className={styles.question__meta}>
+                                        <dl className={styles.question__info}>
+                                            <div className={styles.info__item}>
+                                                <dt>Рейтинг:</dt>
+                                                <dd className={styles.info__value}>4</dd>
+                                            </div>
+                                            <div className={styles.info__item}>
+                                                <dt>Сложность:</dt>
+                                                <dd className={styles.info__value}>10</dd>
+                                            </div>
+                                        </dl>
+
+                                        <button
+                                            className={styles.question__options}
+                                            type='button'
+                                            aria-label='Открыть опции'
+                                        >
+                                            <span
+                                                className={styles.options__dot}
+                                                aria-hidden='true'
+                                            ></span>
+                                            <span
+                                                className={styles.options__dot}
+                                                aria-hidden='true'
+                                            ></span>
+                                            <span
+                                                className={styles.options__dot}
+                                                aria-hidden='true'
+                                            ></span>
+                                        </button>
+                                    </footer>
+
+                                    <div className={styles.question__text_content}>
+                                        <p className={styles.question__text}>
+                                            Virtual DOM — это абстракция реального DOM, которая используется React для улучшения производительности.
+                                            Вместо того чтобы обновлять реальный DOM напрямую при каждом изменении состояния, React сначала обновляет виртуальный DOM, а затем сравнивает его с предыдущей версией, чтобы минимизировать количество операций с реальным DOM.
+                                            Этот процесс называется дифференциацией (reconciliation).
+                                        </p>
+
+                                        <pre className={styles.code}>
+                                            <code className={styles.code__content}>
+                                                {`function diff(oldTree, newTree) {
+  if (oldTree !== newTree) {
+    updateDOM(newTree)
+  }
+}`}
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article className={styles.question}>
+                                <header className={styles.question__header}>
+                                    <span
+                                        className={styles.question__icon}
+                                        aria-hidden='true'
+                                    ></span>
+                                    <h3 className={styles.question__title}>Что такое Virtual DOM, и как он работает?</h3>
+                                    <button
+                                        className={styles.question__toggle}
+                                        type='button'
+                                        aria-label='Развернуть ответ'
+                                        aria-expanded='true'
+                                        aria-controls='question-content-1'
+                                    >
+                                        <ChevroneDownIcon />
+                                    </button>
+                                </header>
+                            </article>
+
+                            <nav className={styles.pagination} aria-label='Пагинация'>
+                                <button className={styles.pagination__arrow} type='button' aria-label='Предыдущая страница'>
+                                    <ArrowLeftIcon size={20} />
+                                </button>
+
+                                <ul className={styles.pagination__list}>
+                                    <li>
+                                        <button className={styles.pagination__button}>1</button>
+                                    </li>
+
+                                    <li>
+                                        <button className={cn(styles.pagination__button, styles.pagination__button_active)} disabled={true}>
+                                            2
+                                        </button>
+                                    </li>
+
+                                    <li>
+                                        <button className={styles.pagination__button}>3</button>
+                                    </li>
+
+                                    <li>
+                                        <button className={styles.pagination__button}>4</button>
+                                    </li>
+
+                                    <li className={styles.pagination__ellipsis}>
+                                        <span>…</span>
+                                    </li>
+
+                                    <li>
+                                        <button className={styles.pagination__button}>17</button>
+                                    </li>
+
+                                    <li>
+                                        <button className={styles.pagination__button}>18</button>
+                                    </li>
+                                </ul>
+
+                                <button className={styles.pagination__arrow} type='button' aria-label='Следующая страница'>
+                                    <ArrowRightIcon size={20} />
+                                </button>
+                            </nav>
+                        </section>
+
+                        <section className={cn(styles.section, styles.section__filters)}>
+                            Тут будут фильтра вопросов
+                        </section>
+                    </Container>
+                </main>
+            </div>
         </div>
     )
 }
