@@ -18,6 +18,8 @@ import { Container } from '../6_shared/ui/container/Container'
 import { ArrowLeftIcon } from '../6_shared/ui/icon/variants/ArrowLeftIcon'
 import { ArrowRightIcon } from '../6_shared/ui/icon/variants/ArrowRightIcon'
 import { NotebookIcon } from '../6_shared/ui/icon/variants/NotebookIcon'
+import { MagniferIcon } from '../6_shared/ui/icon/variants/MagniferIcon'
+import { WireframingIcon } from '../6_shared/ui/icon/variants/WireframingIcon'
 
 function App() {
     
@@ -245,7 +247,11 @@ function App() {
                             </article>
 
                             <nav className={styles.pagination} aria-label='Пагинация'>
-                                <button className={styles.pagination__arrow} type='button' aria-label='Предыдущая страница'>
+                                <button
+                                    className={styles.pagination__arrow}
+                                    type='button'
+                                    aria-label='Предыдущая страница'
+                                >
                                     <ArrowLeftIcon size={20} />
                                 </button>
 
@@ -255,7 +261,10 @@ function App() {
                                     </li>
 
                                     <li>
-                                        <button className={cn(styles.pagination__button, styles.pagination__button_active)} disabled={true}>
+                                        <button
+                                            className={cn(styles.pagination__button, styles.pagination__button_active)}
+                                            disabled={true}
+                                        >
                                             2
                                         </button>
                                     </li>
@@ -281,14 +290,261 @@ function App() {
                                     </li>
                                 </ul>
 
-                                <button className={styles.pagination__arrow} type='button' aria-label='Следующая страница'>
+                                <button
+                                    className={styles.pagination__arrow}
+                                    type='button'
+                                    aria-label='Следующая страница'
+                                >
                                     <ArrowRightIcon size={20} />
                                 </button>
                             </nav>
                         </section>
 
                         <section className={cn(styles.section, styles.section__filters)}>
-                            Тут будут фильтра вопросов
+                            <form className={styles.filters} aria-label='Фильтры вопросов'>
+                                <div className={styles.filters__search}>
+                                    <label className='visually-hidden' htmlFor='search'></label>
+                                    <MagniferIcon className={styles.search__icon} size={20} />
+
+                                    <input
+                                        className={styles.search__input}
+                                        type='text'
+                                        id='search'
+                                        placeholder='Введите запрос...'
+                                    />
+                                </div>
+
+                                <fieldset className={styles.filters__group}>
+                                    <legend className={styles.group__title}>
+                                        Категории вопросов
+                                    </legend>
+
+                                    <ul className={styles.group__list}>
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                <img
+                                                    className={styles.filter__icon}
+                                                    src='/icons/figma.svg'
+                                                    width={20}
+                                                    height={20}
+                                                    alt=''
+                                                    aria-hidden='true'
+                                                />
+                                                <span className={styles.filter__label}>Figma</span>
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                <WireframingIcon size={20} />
+                                                <span className={styles.filter__label}>Wireframing</span>
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                <img
+                                                    className={styles.filter__icon}
+                                                    src='/icons/figma.svg'
+                                                    width={20}
+                                                    height={20}
+                                                    alt=''
+                                                    aria-hidden='true'
+                                                />
+                                                <span className={styles.filter__label}>CSS</span>
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                <WireframingIcon size={20} />
+                                                <span className={styles.filter__label}>Wireframing</span>
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                <WireframingIcon size={20} />
+                                                <span className={styles.filter__label}>React.js</span>
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                <WireframingIcon size={20} />
+                                                <span className={styles.filter__label}>HTML</span>
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                <img
+                                                    className={styles.filter__icon}
+                                                    src='/icons/figma.svg'
+                                                    width={20}
+                                                    height={20}
+                                                    alt=''
+                                                    aria-hidden='true'
+                                                />
+                                                <span className={styles.filter__label}>Figma</span>
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                <WireframingIcon size={20} />
+                                                <span className={styles.filter__label}>Wireframing</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+
+                                    <button type='button' className={styles.filters__more}>
+                                        Посмотреть все
+                                    </button>
+                                </fieldset>
+
+                                <fieldset className={styles.filters__group}>
+                                    <legend className={styles.group__title}>
+                                        Уровень сложности
+                                    </legend>
+
+                                    <ul className={styles.group__list}>
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                1–3
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                4–6
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                7–8
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                9–10
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </fieldset>
+
+                                <fieldset className={styles.filters__group}>
+                                    <legend className={styles.group__title}>
+                                        Рейтинг
+                                    </legend>
+
+                                    <ul className={styles.group__list}>
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >1</button>
+                                        </li>
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >2</button>
+                                        </li>
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >3</button>
+                                        </li>
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >4</button>
+                                        </li>
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >5</button>
+                                        </li>
+                                    </ul>
+                                </fieldset>
+
+                                <fieldset className={styles.filters__group}>
+                                    <legend className={styles.group__title}>
+                                        Статус
+                                    </legend>
+
+                                    <ul className={styles.group__list}>
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                Изученные
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                Не изученные
+                                            </button>
+                                        </li>
+
+                                        <li className={styles.filters__item}>
+                                            <button
+                                                type='button'
+                                                className={styles.filter__button}
+                                            >
+                                                Все
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </fieldset>
+                            </form>
                         </section>
                     </Container>
                 </main>
