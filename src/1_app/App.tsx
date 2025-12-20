@@ -1,135 +1,23 @@
-import { SendSquareIcon } from '../6_shared/ui/icon/variants/SendSquareIcon'
-import { HomeIcon } from '../6_shared/ui/icon/variants/HomeIcon'
-import { UserRoundedIcon } from '../6_shared/ui/icon/variants/UserRoundedIcon'
-import { BookIcon } from '../6_shared/ui/icon/variants/BookIcon'
-import { StudentIcon } from '../6_shared/ui/icon/variants/StudentIcon'
-import { BroadcastIcon } from '../6_shared/ui/icon/variants/BroadcastIcon'
-import { ChatCircleText } from '../6_shared/ui/icon/variants/ChatCircleText'
-import { LogoutIcon } from '../6_shared/ui/icon/variants/LogoutIcon'
-import { ChevroneDownIcon } from '../6_shared/ui/icon/variants/ChevroneDownIcon'
-import { ChevroneUpIcon } from '../6_shared/ui/icon/variants/ChevroneUpIcon'
-import { YeaLogo } from '../6_shared/ui/logo/YeaLogo'
-
-import styles from './styles.module.css'
-import { Button } from '../6_shared/ui/button/Button'
-import { SettingsIcon } from '../6_shared/ui/icon/variants/SettingsIcon'
 import { cn } from '../6_shared/lib/utils/classNames'
 import { Container } from '../6_shared/ui/container/Container'
 import { ArrowLeftIcon } from '../6_shared/ui/icon/variants/ArrowLeftIcon'
 import { ArrowRightIcon } from '../6_shared/ui/icon/variants/ArrowRightIcon'
-import { NotebookIcon } from '../6_shared/ui/icon/variants/NotebookIcon'
 import { MagniferIcon } from '../6_shared/ui/icon/variants/MagniferIcon'
 import { WireframingIcon } from '../6_shared/ui/icon/variants/WireframingIcon'
+import { Header } from '../3_widgets/header/ui/Header'
+import { Sidebar } from '../3_widgets/sidebar/ui/Sidebar'
+import { QuestionItem } from '../5_entities/question-item/ui/QuestionItem'
+
+import styles from './styles.module.css'
 
 function App() {
     
     return (
         <div className={styles.page}>
-            <aside className={styles.sidebar}>
-                <header className={styles.sidebar__header}>
-                    <YeaLogo />
-
-                    <button
-                        className={styles.header__button}
-                        type='button'
-                        aria-label='Свернуть меню'
-                    >
-                        <SendSquareIcon size={20} />
-                    </button>
-                </header>
-
-                <nav className={styles.sidebar__nav} aria-label='Основная навигация'>
-                    <ul className={styles.nav__list}>
-                        <li>
-                            <a className={styles.item__link} href='/'>
-                                <HomeIcon />
-                                <span>Главная</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a className={styles.item__link} href='/'>
-                                <UserRoundedIcon />
-                                <span>Мой профиль</span>
-                            </a>
-                        </li>
-
-                        <li className={styles.accordion__expanded}>
-                            <button
-                                className={styles.item__button}
-                                type='button'
-                                aria-expanded='true'
-                                aria-controls='training-submenu'
-                            >
-                                <BookIcon />
-                                <span>Обучение</span>
-                                <ChevroneUpIcon className={styles.icon__accordion} />
-                            </button>
-
-                            <ul className={styles.submenu} id='training-submenu'>
-                                <li>
-                                    <a className={styles.item__link} href='/'>
-                                        <StudentIcon />
-                                        <span>Собеседование</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a className={styles.item__link} href='/'>
-                                        <BroadcastIcon />
-                                        <span>Roadmap</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <button
-                                className={styles.item__button}
-                                type='button'
-                                aria-expanded='false'
-                                aria-controls='blog-submenu'
-                            >
-                                <NotebookIcon />
-                                <span>Блог</span>
-                                <ChevroneDownIcon className={styles.icon__accordion} />
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-
-                <footer className={styles.sidebar__footer}>
-                    <Button variant='primary' as='a' href='/' aria-label='Поддержка в Telegram'>
-                        <ChatCircleText />
-                        <span>Поддержка</span>
-                    </Button>
-
-                    <Button variant='outline' aria-label='Выйти из аккаунта'>
-                        <LogoutIcon />
-                        <span>Выход</span>
-                    </Button>
-                </footer>
-            </aside>
+           <Sidebar />
 
             <div className={styles.page__content}>
-                <header className={styles.header}>
-                    <h1 className='visually-hidden'>YeaHub - тренажер для подготовки к IT-собеседованиям</h1>
-                    <div className={styles.header__menu}>
-                        <button className={styles.menu__settings} type='button'>
-                            <SettingsIcon size={20} />
-                        </button>
-                        <button>
-                            <img
-                                className={styles.menu__avatar}
-                                src='/images/profile_photo.png'
-                                alt='Profile Avatar'
-                                width='40'
-                                height='40'
-                                loading='lazy'
-                            />
-                        </button>
-                    </div>
-                </header>
+                <Header />
 
                 <main>
                     <Container>
@@ -156,95 +44,11 @@ function App() {
                                 Вопросы React, JavaScript
                             </h2>
 
-                            <article className={styles.question}>
-                                <header className={styles.question__header}>
-                                    <span
-                                        className={styles.question__icon}
-                                        aria-hidden='true'
-                                    ></span>
-                                    <h3 className={styles.question__title}>Что такое Virtual DOM, и как он работает?</h3>
-                                    <button
-                                        className={styles.question__toggle}
-                                        type='button'
-                                        aria-label='Развернуть ответ'
-                                        aria-expanded='true'
-                                        aria-controls='question-content-1'
-                                    >
-                                        <ChevroneUpIcon />
-                                    </button>
-                                </header>
+                            <QuestionItem />
+                            <QuestionItem />
+                            <QuestionItem />
 
-                                <div className={styles.question__content} id='question-content-1'>
-                                    <footer className={styles.question__meta}>
-                                        <dl className={styles.question__info}>
-                                            <div className={styles.info__item}>
-                                                <dt>Рейтинг:</dt>
-                                                <dd className={styles.info__value}>4</dd>
-                                            </div>
-                                            <div className={styles.info__item}>
-                                                <dt>Сложность:</dt>
-                                                <dd className={styles.info__value}>10</dd>
-                                            </div>
-                                        </dl>
-
-                                        <button
-                                            className={styles.question__options}
-                                            type='button'
-                                            aria-label='Открыть опции'
-                                        >
-                                            <span
-                                                className={styles.options__dot}
-                                                aria-hidden='true'
-                                            ></span>
-                                            <span
-                                                className={styles.options__dot}
-                                                aria-hidden='true'
-                                            ></span>
-                                            <span
-                                                className={styles.options__dot}
-                                                aria-hidden='true'
-                                            ></span>
-                                        </button>
-                                    </footer>
-
-                                    <div className={styles.question__text_content}>
-                                        <p className={styles.question__text}>
-                                            Virtual DOM — это абстракция реального DOM, которая используется React для улучшения производительности.
-                                            Вместо того чтобы обновлять реальный DOM напрямую при каждом изменении состояния, React сначала обновляет виртуальный DOM, а затем сравнивает его с предыдущей версией, чтобы минимизировать количество операций с реальным DOM.
-                                            Этот процесс называется дифференциацией (reconciliation).
-                                        </p>
-
-                                        <pre className={styles.code}>
-                                            <code className={styles.code__content}>
-                                                {`function diff(oldTree, newTree) {
-  if (oldTree !== newTree) {
-    updateDOM(newTree)
-  }
-}`}
-                                            </code>
-                                        </pre>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <article className={styles.question}>
-                                <header className={styles.question__header}>
-                                    <span
-                                        className={styles.question__icon}
-                                        aria-hidden='true'
-                                    ></span>
-                                    <h3 className={styles.question__title}>Что такое Virtual DOM, и как он работает?</h3>
-                                    <button
-                                        className={styles.question__toggle}
-                                        type='button'
-                                        aria-label='Развернуть ответ'
-                                        aria-expanded='true'
-                                        aria-controls='question-content-1'
-                                    >
-                                        <ChevroneDownIcon />
-                                    </button>
-                                </header>
-                            </article>
+                            
 
                             <nav className={styles.pagination} aria-label='Пагинация'>
                                 <button
