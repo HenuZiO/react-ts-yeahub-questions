@@ -11,7 +11,7 @@ button {
     background-color: transparent;
     border: none;
     display: inline-flex;
-    transition-duration: 0.3s;
+    padding: 0;
 }
 
 .visually-hidden {
