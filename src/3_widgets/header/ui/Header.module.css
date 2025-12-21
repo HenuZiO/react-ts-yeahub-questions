@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    align-items: center;
+    min-height: var(--height-header);
+    border-bottom: 1px solid var(--color-black-50);
+    width: 100%;
+    padding-inline: 20px;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-black-25);
+    z-index: 50;
+}
+
+.header__menu {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.menu__settings {
+    padding: 8px;
+}
+
+.menu__settings:hover {
+    color: var(--color-purple-700);
+}
+
+.menu__settings:focus-visible {
+    outline: 2px solid var(--color-purple-700);
+    outline-offset: 2px;
+}
+
+.menu__avatar:focus-visible {
+    outline: 2px solid var(--color-purple-700);
+}
+
+.menu__avatar_img {
+    object-fit: cover;
+}
+

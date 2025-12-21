@@ -1,252 +1,113 @@
+import { cn } from '../6_shared/lib/utils/classNames'
+import { Container } from '../6_shared/ui/container/Container'
+import { ArrowLeftIcon } from '../6_shared/ui/icon/variants/ArrowLeftIcon'
+import { ArrowRightIcon } from '../6_shared/ui/icon/variants/ArrowRightIcon'
+import { Header } from '../3_widgets/header/ui/Header'
+import { Sidebar } from '../3_widgets/sidebar/ui/Sidebar'
+import { QuestionItem } from '../5_entities/question-item/ui/QuestionItem'
+import { QuestionFilters } from '../3_widgets/questions-filters/ui/QuestionsFilters'
+
+import styles from './styles.module.css'
+
 function App() {
     
     return (
-        <>
-            <aside>
-                <header>
-                    <div>
-                        <img src='' alt='' width='33' height='33' loading='lazy' />
-                        <span>YeaHub</span>
-                    </div>
-                    <button type='button' aria-label='Свернуть меню'>
-                        {'<'}
-                    </button>
-                </header>
+        <div className={styles.page}>
+           <Sidebar />
 
-                <nav aria-label='Основная навигация'>
-                    <ul>
-                        <li>
-                            <a href='/'>
-                                <span aria-hidden='true'>[]</span>
-                                <span>Главная</span>
-                            </a>
-                        </li>
+            <div className={styles.page__content}>
+                <Header />
 
-                        <li>
-                            <a href='/'>
-                                <span aria-hidden='true'>[]</span>
-                                <span>Мой профиль</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <button
-                                type='button'
-                                aria-expanded='true'
-                                aria-controls='training-submenu'
-                            >
-                                <span aria-hidden='true'>[]</span>
-                                <span>Обучение</span>
-                            </button>
-
-                            <ul id='training-submenu'>
-                                <li>
-                                    <a href='/'>
-                                        <span aria-hidden='true'>[]</span>
-                                        <span>Собеседование</span>
+                <main>
+                    <Container>
+                        <nav className={styles.breadcrumbs}>
+                            <ol className={styles.breadcrumbs__list}>
+                                <li className={styles.breadcrumbs__list_item}>
+                                    <a className={styles.breadcrumbs__item_link} href='/'>
+                                        Обучение
                                     </a>
                                 </li>
 
-                                <li>
-                                    <a href='/'>
-                                        <span aria-hidden='true'>[]</span>
-                                        <span>Roadmap</span>
+                                <li className={styles.breadcrumbs__list_item}>
+                                    <a className={styles.breadcrumbs__item_link} href='/'>
+                                        Список вопросов
                                     </a>
                                 </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <button
-                                type='button'
-                                aria-expanded='true'
-                                aria-controls='blog-submenu'
-                            >
-                                <span aria-hidden='true'>[]</span>
-                                <span>Блог</span>
-                            </button>
-
-                            <ul id='blog-submenu'>
-                                <li>
-                                    <a href='/'>
-                                        <span aria-hidden='true'>[]</span>
-                                        <span>Все статьи</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href='/'>
-                                        <span aria-hidden='true'>[]</span>
-                                        <span>Личный блог</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href='/blog/new'>
-                                        <span aria-hidden='true'>[]</span>
-                                        <span>Написать статью</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href='/blog/saved'>
-                                        <span aria-hidden='true'>[]</span>
-                                        <span>Сохранённые</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-
-                <footer>
-                    <a href='/'>
-                        <span aria-hidden='true'>[]</span>
-                        <span>Поддержка</span>
-                    </a>
-
-                    <button type='button'>
-                        <span aria-hidden='true'>[]</span>
-                        <span>Выход</span>
-                    </button>
-                </footer>
-            </aside>
-
-            <header>
-                <h1>YeaHub - тренажер для подготовки к IT-собеседованиям</h1>
-                <div>
-                    <button type='button'>
-                        <img src='' alt='' width='20' height='20' loading='lazy' />
-                    </button>
-                    <img src='' alt='' width='40' height='40' loading='lazy' />
-                </div>
-            </header>
-
-            <main>
-                <nav>
-                    <ol>
-                        <li>
-                            <a href='/'>
-                                Обучение
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href='/'>
-                                Список вопросов
-                            </a>
-                        </li>
-                    </ol>
-                </nav>
-
-                <div>
-                    <section>
-                        <h2>Вопросы React, JavaScript</h2>
-
-                        <article>
-                            <header>
-                                <img
-                                    src=''
-                                    alt=''
-                                    width='8'
-                                    height='8'
-                                    loading='lazy'
-                                    aria-hidden='true'
-                                />
-                                <h3>Что такое Virtual DOM, и как он работает?</h3>
-                                <button type='button' aria-label='Развернуть ответ'>
-                                    <img src='' alt='' width='24' height='24' loading='lazy' />
-                                </button>
-                            </header>
-
-                            <div>
-                                <dl>
-                                    <div>
-                                        <dt>Рейтинг</dt>
-                                        <dd>4</dd>
-                                    </div>
-                                    <div>
-                                        <dt>Сложность</dt>
-                                        <dd>10</dd>
-                                    </div>
-                                </dl>
-                                
-                                <button  type='button' aria-label='Вопрос - действия'>
-                                    Настройки
-                                </button>
-                            </div>
-
-                            <div>
-                                <p>
-                                    Virtual DOM — это абстракция реального DOM, которая используется React для улучшения производительности.
-                                    Вместо того чтобы обновлять реальный DOM напрямую при каждом изменении состояния, React сначала обновляет виртуальный DOM, а затем сравнивает его с предыдущей версией, чтобы минимизировать количество операций с реальным DOM.
-                                    Этот процесс называется дифференциацией (reconciliation).
-                                </p>
-                                <pre>
-                                    <code>
-                                        [тут пример кода]
-                                    </code>
-                                </pre>
-                                
-                            </div>
-                        </article>
-
-                        <nav aria-label='Пагинация'>
-                            <button type='button' aria-label='Предыдущая страница'>
-                                {'<-'}
-                            </button>
-
-                            <ul>
-                                <li>
-                                    <button type='button'>
-                                        1
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type='button'>
-                                        2
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type='button'>
-                                        3
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type='button'>
-                                        4
-                                    </button>
-                                </li>
-
-                                <li>
-                                    <span>...</span>
-                                </li>
-
-                                <li>
-                                    <button type='button'>
-                                        17
-                                    </button>
-                                </li>
-
-                                <li>
-                                    <button type='button'>
-                                        18
-                                    </button>
-                                </li>
-                            </ul>
-
-                            <button type='button' aria-label='Следующая страница'>
-                                {'->'}
-                            </button>
+                            </ol>
                         </nav>
-                    </section>
-                    
-                    <section>
-                        Тут будут фильтра вопросов
-                    </section>
-                </div>
-            </main>
-        </>
+                    </Container>
+
+                    <Container className={styles.sections}>
+                        <section className={styles.section}>
+                            <h2 className={styles.section__title}>
+                                Вопросы React, JavaScript
+                            </h2>
+
+                            <QuestionItem />
+                            <QuestionItem />
+                            <QuestionItem />
+
+                            
+
+                            <nav className={styles.pagination} aria-label='Пагинация'>
+                                <button
+                                    className={styles.pagination__arrow}
+                                    type='button'
+                                    aria-label='Предыдущая страница'
+                                >
+                                    <ArrowLeftIcon size={20} />
+                                </button>
+
+                                <ul className={styles.pagination__list}>
+                                    <li>
+                                        <button className={styles.pagination__button}>1</button>
+                                    </li>
+
+                                    <li>
+                                        <button
+                                            className={cn(styles.pagination__button, styles.pagination__button_active)}
+                                            disabled={true}
+                                        >
+                                            2
+                                        </button>
+                                    </li>
+
+                                    <li>
+                                        <button className={styles.pagination__button}>3</button>
+                                    </li>
+
+                                    <li>
+                                        <button className={styles.pagination__button}>4</button>
+                                    </li>
+
+                                    <li className={styles.pagination__ellipsis}>
+                                        <span>…</span>
+                                    </li>
+
+                                    <li>
+                                        <button className={styles.pagination__button}>17</button>
+                                    </li>
+
+                                    <li>
+                                        <button className={styles.pagination__button}>18</button>
+                                    </li>
+                                </ul>
+
+                                <button
+                                    className={styles.pagination__arrow}
+                                    type='button'
+                                    aria-label='Следующая страница'
+                                >
+                                    <ArrowRightIcon size={20} />
+                                </button>
+                            </nav>
+                        </section>
+
+                        <QuestionFilters />
+                    </Container>
+                </main>
+            </div>
+        </div>
     )
 }
 
