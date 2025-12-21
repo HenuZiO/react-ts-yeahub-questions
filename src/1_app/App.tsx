@@ -4,6 +4,9 @@ import { Sidebar } from '../3_widgets/sidebar/ui/Sidebar'
 import { QuestionItem } from '../5_entities/question-item/ui/QuestionItem'
 import { QuestionFilters } from '../3_widgets/questions-filters/ui/QuestionsFilters'
 import { QuestionsPagination } from '../4_features/questions-pagination/ui/QuestionsPagination'
+import { Section } from '../6_shared/ui/section/Section'
+import { SectionTitle } from '../6_shared/ui/section-title/ui/SectionTitle'
+import { Breadcrumbs } from '../6_shared/ui/breadcrumbs/ui/Breadcrumbs'
 
 import styles from './styles.module.css'
 
@@ -18,35 +21,25 @@ function App() {
                 
                 <main>
                     <Container>
-                        <nav className={styles.breadcrumbs}>
-                            <ol className={styles.breadcrumbs__list}>
-                                <li className={styles.breadcrumbs__list_item}>
-                                    <a className={styles.breadcrumbs__item_link} href='/'>
-                                        Обучение
-                                    </a>
-                                </li>
-
-                                <li className={styles.breadcrumbs__list_item}>
-                                    <a className={styles.breadcrumbs__item_link} href='/'>
-                                        Список вопросов
-                                    </a>
-                                </li>
-                            </ol>
-                        </nav>
+                        <Breadcrumbs />
                     </Container>
 
                     <Container className={styles.sections}>
-                        <section className={styles.section}>
-                            <h2 className={styles.section__title}>
-                                Вопросы React, JavaScript
-                            </h2>
+                        <Section>
+                            <SectionTitle>Вопросы React, JavaScript</SectionTitle>
                             <QuestionItem />
                             <QuestionItem />
                             <QuestionItem />
                             <QuestionsPagination />
-                        </section>
+                        </Section>
                         
-                        <QuestionFilters />
+                        <Section className={styles.section__filters}>
+                            <SectionTitle className='visually-hidden'>
+                                Фильтры по вопросам для собеседований
+                            </SectionTitle>
+                            
+                            <QuestionFilters />
+                        </Section>
                     </Container>
                 </main>
             </div>

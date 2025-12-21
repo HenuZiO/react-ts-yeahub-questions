@@ -1,11 +1,3 @@
-.section__filters {
-    max-width: 360px;
-    width: 100%;
-    height: 100%;
-    position: sticky;
-    top: 90px;
-}
-
 .filters {
     display: flex;
     flex-direction: column;

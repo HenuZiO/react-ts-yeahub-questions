@@ -20,6 +20,7 @@
 
 .menu__settings {
     padding: 8px;
+    transition: color 0.3s ease;
 }
 
 .menu__settings:hover {
