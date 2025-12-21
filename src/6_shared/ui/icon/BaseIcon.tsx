@@ -3,6 +3,7 @@ import type { PropsWithChildren, SVGProps } from 'react'
 export type IconProps = {
     size?: number
     color?: string
+    variant?: 'mono' | 'colored'
     className?: string
 } & Omit<SVGProps<SVGSVGElement>, 'color'>
 
@@ -11,7 +12,15 @@ type BaseIconProps = PropsWithChildren<IconProps & {
 }>
 
 export const BaseIcon = (props: BaseIconProps) => {
-    const { size = 24, color = 'currentColor', viewBox, className, children, ...rest } = props
+    const {
+        size = 24,
+        color = 'currentColor',
+        variant = 'mono',
+        viewBox,
+        className,
+        children,
+        ...rest
+    } = props
     
     return (
         <svg
@@ -21,7 +30,8 @@ export const BaseIcon = (props: BaseIconProps) => {
             viewBox={viewBox}
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
-            style={{ color }}
+            data-icon={variant === 'colored' ? 'colored' : undefined}
+            style={variant === 'mono' ? { color } : undefined}
             aria-hidden='true'
             {...rest}
         >
