@@ -1,194 +1,191 @@
 import { MagniferIcon } from '../../../6_shared/ui/icon/variants/MagniferIcon'
 import { WireframingIcon } from '../../../6_shared/ui/icon/variants/WireframingIcon'
-import { Section } from '../../../6_shared/ui/section/Section'
 import { FigmaIcon } from '../../../6_shared/ui/icon/variants/FigmaIcon'
 
 import styles from './QuestionsFilters.module.css'
 
 export const QuestionFilters = () => {
     return (
-        <Section className={styles.section__filters}>
-            <form className={styles.filters} aria-label='Фильтры вопросов'>
-                <div className={styles.filters__search}>
-                    <label className='visually-hidden' htmlFor='questions-search'>
-                        Поиск вопросов
-                    </label>
-                    
-                    <MagniferIcon className={styles.search__icon} size={20} />
+        <form className={styles.filters} aria-label='Фильтры вопросов'>
+            <div className={styles.filters__search}>
+                <label className='visually-hidden' htmlFor='questions-search'>
+                    Поиск вопросов
+                </label>
 
-                    <input
-                        className={styles.search__input}
-                        type='text'
-                        id='questions-search'
-                        placeholder='Введите запрос...'
-                    />
-                </div>
+                <MagniferIcon className={styles.search__icon} size={20} />
 
-                <fieldset className={styles.filters__group}>
-                    <legend className={styles.group__title}>
-                        Категории вопросов
-                    </legend>
+                <input
+                    className={styles.search__input}
+                    type='text'
+                    id='questions-search'
+                    placeholder='Введите запрос...'
+                />
+            </div>
 
-                    <ul className={styles.group__list} id='categories-list'>
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                <FigmaIcon size={20} variant='colored' />
-                                <span>Figma</span>
-                            </button>
-                        </li>
+            <fieldset className={styles.filters__group}>
+                <legend className={styles.group__title}>
+                    Категории вопросов
+                </legend>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                <WireframingIcon size={20} />
-                                <span>Wireframing</span>
-                            </button>
-                        </li>
+                <ul className={styles.group__list} id='categories-list'>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            <FigmaIcon size={20} variant='colored' />
+                            <span>Figma</span>
+                        </button>
+                    </li>
 
-                        <li>
-                            <button className={styles.group__button}  type='button' aria-pressed='true'>
-                                <FigmaIcon size={20} variant='colored' />
-                                <span>CSS</span>
-                            </button>
-                        </li>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            <WireframingIcon size={20} />
+                            <span>Wireframing</span>
+                        </button>
+                    </li>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                <WireframingIcon size={20} />
-                                <span>Wireframing</span>
-                            </button>
-                        </li>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='true'>
+                            <FigmaIcon size={20} variant='colored' />
+                            <span>CSS</span>
+                        </button>
+                    </li>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='true'>
-                                <WireframingIcon size={20} />
-                                <span>React.js</span>
-                            </button>
-                        </li>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            <WireframingIcon size={20} />
+                            <span>Wireframing</span>
+                        </button>
+                    </li>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                <WireframingIcon size={20} />
-                                <span>HTML</span>
-                            </button>
-                        </li>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='true'>
+                            <WireframingIcon size={20} />
+                            <span>React.js</span>
+                        </button>
+                    </li>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                <FigmaIcon size={20} variant='colored' />
-                                <span>Figma</span>
-                            </button>
-                        </li>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            <WireframingIcon size={20} />
+                            <span>HTML</span>
+                        </button>
+                    </li>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                <WireframingIcon size={20} />
-                                <span>Wireframing</span>
-                            </button>
-                        </li>
-                    </ul>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            <FigmaIcon size={20} variant='colored' />
+                            <span>Figma</span>
+                        </button>
+                    </li>
 
-                    <button
-                        type='button'
-                        className={styles.group__more}
-                        aria-expanded='false'
-                        aria-controls='categories-list'
-                    >
-                        Посмотреть все
-                    </button>
-                </fieldset>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            <WireframingIcon size={20} />
+                            <span>Wireframing</span>
+                        </button>
+                    </li>
+                </ul>
 
-                <fieldset className={styles.filters__group}>
-                    <legend className={styles.group__title}>
-                        Уровень сложности
-                    </legend>
+                <button
+                    type='button'
+                    className={styles.group__more}
+                    aria-expanded='false'
+                    aria-controls='categories-list'
+                >
+                    Посмотреть все
+                </button>
+            </fieldset>
 
-                    <ul className={styles.group__list}>
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                1–3
-                            </button>
-                        </li>
+            <fieldset className={styles.filters__group}>
+                <legend className={styles.group__title}>
+                    Уровень сложности
+                </legend>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                4–6
-                            </button>
-                        </li>
+                <ul className={styles.group__list}>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            1–3
+                        </button>
+                    </li>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                7–8
-                            </button>
-                        </li>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            4–6
+                        </button>
+                    </li>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                9–10
-                            </button>
-                        </li>
-                    </ul>
-                </fieldset>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            7–8
+                        </button>
+                    </li>
 
-                <fieldset className={styles.filters__group}>
-                    <legend className={styles.group__title}>
-                        Рейтинг
-                    </legend>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            9–10
+                        </button>
+                    </li>
+                </ul>
+            </fieldset>
 
-                    <ul className={styles.group__list}>
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                1
-                            </button>
-                        </li>
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                2
-                            </button>
-                        </li>
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                3
-                            </button>
-                        </li>
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                4
-                            </button>
-                        </li>
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                5
-                            </button>
-                        </li>
-                    </ul>
-                </fieldset>
+            <fieldset className={styles.filters__group}>
+                <legend className={styles.group__title}>
+                    Рейтинг
+                </legend>
 
-                <fieldset className={styles.filters__group}>
-                    <legend className={styles.group__title}>
-                        Статус
-                    </legend>
+                <ul className={styles.group__list}>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            1
+                        </button>
+                    </li>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            2
+                        </button>
+                    </li>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            3
+                        </button>
+                    </li>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            4
+                        </button>
+                    </li>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            5
+                        </button>
+                    </li>
+                </ul>
+            </fieldset>
 
-                    <ul className={styles.group__list}>
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                Изученные
-                            </button>
-                        </li>
+            <fieldset className={styles.filters__group}>
+                <legend className={styles.group__title}>
+                    Статус
+                </legend>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                Не изученные
-                            </button>
-                        </li>
+                <ul className={styles.group__list}>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            Изученные
+                        </button>
+                    </li>
 
-                        <li>
-                            <button className={styles.group__button} type='button' aria-pressed='false'>
-                                Все
-                            </button>
-                        </li>
-                    </ul>
-                </fieldset>
-            </form>
-        </Section>
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            Не изученные
+                        </button>
+                    </li>
+
+                    <li>
+                        <button className={styles.group__button} type='button' aria-pressed='false'>
+                            Все
+                        </button>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
     )
 }
