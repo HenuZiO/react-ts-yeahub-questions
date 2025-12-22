@@ -1,0 +1,11 @@
+.page {
+    display: flex;
+}
+
+.page__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 20px;
+}

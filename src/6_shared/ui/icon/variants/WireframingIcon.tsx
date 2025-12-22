@@ -4,7 +4,7 @@ import type { IconProps } from '../BaseIcon'
 export const WireframingIcon = (props: IconProps) => {
     return (
         <BaseIcon viewBox='0 0 20 20' {...props}>
-            <g clip-path='url(#clip0_24001_19668)'>
+            <g clipPath='url(#clip0_24001_19668)'>
                 <path
                     fillRule='evenodd'
                     clipRule='evenodd'
