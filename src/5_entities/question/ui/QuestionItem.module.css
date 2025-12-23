@@ -97,18 +97,17 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-}
-
-.question__paragraph {
     line-height: var(--font-line-heading);
 }
 
-.question__code {
-    background-color: var(--color-black-800);
-    border-radius: 12px;
-    padding: 24px;
-    overflow-x: auto;
-    margin: 0;
+.question__text {
+    line-height: 1.6;
+    color: var(--color-black-800);
+}
+
+.question__text {
+    line-height: 1.6;
+    color: var(--color-black-800);
 }
 
 .code__content {

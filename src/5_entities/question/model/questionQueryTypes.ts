@@ -1,3 +1,5 @@
+import type { Question } from './questionTypes'
+
 export type QuestionsQueryParams = {
     page?: number
     limit?: number
@@ -7,4 +9,11 @@ export type QuestionsQueryParams = {
     rate?: number[]
     specialization?: number
     keywords?: string[]
+}
+
+export type QuestionsQueryResult = {
+    questions: Question[]
+    page: number
+    limit: number
+    total: number
 }
