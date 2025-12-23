@@ -26,3 +26,7 @@ export type Question = {
 }
 
 export type QuestionsApiResponse = BaseApiResponse<Question>
+
+export type QuestionProps = {
+    question: Question
+}

@@ -10,4 +10,5 @@
     height: 100%;
     position: sticky;
     top: 90px;
+    flex-shrink: 0;
 }

@@ -1,13 +1,15 @@
+import type { QuestionProps } from '../model/questionTypes'
+
 import { ChevroneUpIcon } from '../../../6_shared/ui/icon/variants/ChevroneUpIcon'
 
 import styles from './QuestionItem.module.css'
 
-export const QuestionItem = () => {
+export const QuestionItem = ({ question }: QuestionProps) => {
     return (
         <article className={styles.question}>
             <header className={styles.question__header}>
                 <h3 className={styles.question__title}>
-                    Что такое Virtual DOM, и как он работает?
+                    {question.title}
                 </h3>
                 <button
                     className={styles.question__toggle}
@@ -25,11 +27,11 @@ export const QuestionItem = () => {
                     <dl className={styles.meta__info}>
                         <div className={styles.meta__item}>
                             <dt>Рейтинг:</dt>
-                            <dd className={styles.meta__value}>4</dd>
+                            <dd className={styles.meta__value}>{question.rate}</dd>
                         </div>
                         <div className={styles.meta__item}>
                             <dt>Сложность:</dt>
-                            <dd className={styles.meta__value}>10</dd>
+                            <dd className={styles.meta__value}>{question.complexity}</dd>
                         </div>
                     </dl>
 
@@ -45,19 +47,7 @@ export const QuestionItem = () => {
                     </button>
                 </div>
 
-                <div className={styles.question__text}>
-                    <p className={styles.question__paragraph}>
-                        Virtual DOM — это абстракция реального DOM, которая используется React для улучшения производительности.
-                        Вместо того чтобы обновлять реальный DOM напрямую при каждом изменении состояния, React сначала обновляет виртуальный DOM, а затем сравнивает его с предыдущей версией, чтобы минимизировать количество операций с реальным DOM.
-                        Этот процесс называется дифференциацией (reconciliation).
-                    </p>
-
-                    <pre className={styles.question__code}>
-                        <code className={styles.code__content}>
-                            [Тут был пример кода, но пришлось его пока убрать, чтобы код выглядел чище]
-                        </code>
-                    </pre>
-                </div>
+                <div className={styles.question__text} dangerouslySetInnerHTML={{ __html: question.shortAnswer }} />
             </div>
         </article>
     )
