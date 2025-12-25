@@ -1,7 +1,7 @@
 import React from 'react'
+import { cn } from '@/6_shared/lib/utils/classnames'
 
 import styles from './SectionTitle.module.css'
-import { cn } from '../../../lib/utils/classNames'
 
 type SectionTitleProps = {
     children: React.ReactNode

@@ -20,6 +20,12 @@
     border-color: var(--color-purple-800);
 }
 
+.pagination__arrow:disabled {
+    pointer-events: none;
+    color: var(--color-purple-300);
+    border-color: var(--color-purple-300);
+}
+
 .pagination__arrow:active {
     background-color: var(--color-purple-700);
     color: var(--color-white-900);
@@ -33,6 +39,7 @@
 
 .pagination__button {
     min-width: 21px;
+    padding-inline: 5px;
     height: 25px;
     display: inline-flex;
     align-items: center;
@@ -40,7 +47,6 @@
     border-radius: 2px;
     font-size: var(--font-size-small);
     color: var(--color-black-700);
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .pagination__button:disabled {
