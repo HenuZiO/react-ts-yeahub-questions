@@ -1,0 +1,1 @@
+export { YeaLogo } from './ui/YeaLogo'

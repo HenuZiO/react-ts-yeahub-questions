@@ -1,7 +1,6 @@
-import type { Specialization } from '../../specialization/model/specializationTypes'
-import type { Skill } from '../../skill/model/skillTypes'
-import type { BaseApiResponse } from '../../../6_shared/model/apiTypes'
-import type { UserShort } from '../../../6_shared/model/userTypes'
+import type { Skill } from '@/5_entities/skill'
+import type { Specialization } from '@/5_entities/specialization'
+import type { AuthorShort, BaseApiResponse } from '@/6_shared/model'
 
 export type Question = {
     id: number
@@ -19,8 +18,8 @@ export type Question = {
     updatedAt: string
     createdById: string
     updatedById: string
-    createdBy: UserShort
-    updatedBy: UserShort
+    createdBy: AuthorShort
+    updatedBy: AuthorShort
     questionSpecializations: Specialization[]
     questionSkills: Skill[]
 }

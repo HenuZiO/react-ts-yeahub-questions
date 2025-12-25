@@ -1,6 +1,6 @@
 import type { QuestionProps } from '../model/questionTypes'
 
-import { ChevroneUpIcon } from '../../../6_shared/ui/icon/variants/ChevroneUpIcon'
+import { ChevroneUpIcon } from '@/6_shared/ui/icon'
 
 import styles from './QuestionItem.module.css'
 

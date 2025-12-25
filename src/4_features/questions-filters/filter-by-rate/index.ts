@@ -1,0 +1,1 @@
+export { FilterByRate } from './ui/FilterByRate'

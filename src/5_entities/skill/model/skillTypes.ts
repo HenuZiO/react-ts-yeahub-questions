@@ -1,6 +1,5 @@
-import type { Specialization } from '../../specialization/model/specializationTypes'
-import type { BaseApiResponse } from '../../../6_shared/model/apiTypes'
-import type { UserShort } from '../../../6_shared/model/userTypes'
+import type { Specialization } from '@/5_entities/specialization'
+import type { AuthorShort, BaseApiResponse } from '@/6_shared/model'
 
 export type Skill = {
     id: number
@@ -9,7 +8,7 @@ export type Skill = {
     imageSrc: string | null
     createdAt: string
     updatedAt: string
-    createdBy: UserShort
+    createdBy: AuthorShort
     specializations: Specialization[]
 }
 

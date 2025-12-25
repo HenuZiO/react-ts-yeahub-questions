@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router'
-import { QuestionsPage } from '../../../2_pages/questions/ui/QuestionsPage'
-import { AppLayout } from '../../layouts/AppLayout'
+import { AppLayout } from '@/1_app/layouts'
+import { QuestionsPage } from '@/2_pages/questions'
 
 export const routes = [
     {

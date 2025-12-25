@@ -5,6 +5,7 @@ export type QuestionsQueryParams = {
     limit?: number
     title?: string
     skills?: number[]
+    skillFilterMode?: 'ANY' | 'ALL'
     complexity?: number[]
     rate?: number[]
     specialization?: number

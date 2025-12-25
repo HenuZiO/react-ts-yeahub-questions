@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type { QuestionsQueryParams } from '../model/questionQueryTypes'
-import type { QuestionsQueryResult } from '../model/questionQueryTypes'
+import type { QuestionsQueryParams, QuestionsQueryResult } from '../model/questionQueryTypes'
 import type { QuestionsApiResponse } from '../model/questionTypes'
 
 export const questionApi = createApi({
@@ -18,10 +17,10 @@ export const questionApi = createApi({
                 questions: response.data,
                 page: response.page,
                 limit: response.limit,
-                total: response.total,
+                total: response.total
             })
-        }),
-    }),
+        })
+    })
 })
 
 export const { useGetQuestionsQuery } = questionApi
