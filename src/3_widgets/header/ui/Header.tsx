@@ -1,4 +1,5 @@
 import { SettingsIcon } from '@/6_shared/ui/icon'
+
 import styles from './Header.module.css'
 
 export const Header = () => {
