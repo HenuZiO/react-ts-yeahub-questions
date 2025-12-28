@@ -38,3 +38,31 @@
     object-fit: cover;
 }
 
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu__item,
+.menu__item_active {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--font-size-small);
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: var(--color-black-800);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu__item:hover {
+    background-color: var(--color-black-10);
+    color: var(--color-purple-700);
+}
+
+.menu__item_active {
+    background-color: var(--color-purple-50);
+    color: var(--color-purple-700);
+}
