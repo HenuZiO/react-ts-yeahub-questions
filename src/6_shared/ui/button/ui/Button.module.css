@@ -30,22 +30,40 @@
     outline-offset: -1px;
 }
 
-.button__outline {
+.button__destructive {
     border: 1px solid var(--color-red-600);
     color: var(--color-red-600);
 }
 
-.button__outline:hover {
+.button__destructive:hover {
     background-color: var(--color-red-25);
 }
 
-.button__outline:active {
+.button__destructive:active {
     background-color: var(--color-red-100);
     border-color: var(--color-red-800);
 }
 
-.button__outline:focus-visible {
+.button__destructive:focus-visible {
     outline: 2px solid var(--color-red-600);
+}
+
+.button__outline {
+    border: 1px solid var(--color-purple-700);
+    color: var(--color-purple-700);
+}
+
+.button__outline:hover {
+    background-color: var(--color-purple-50);
+}
+
+.button__outline:active {
+    background-color: var(--color-purple-100);
+    border-color: var(--color-purple-800);
+}
+
+.button__outline:focus-visible {
+    outline: 2px solid var(--color-purple-600);
 }
 
 .button__disable {
