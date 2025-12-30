@@ -9,6 +9,7 @@ import { ChatCircleText, ChevroneDownIcon, LogoutIcon, SendSquareIcon } from '@/
 import styles from './Sidebar.module.css'
 
 export const Sidebar = () => {
+    const [isSidebarHidden, setIsSidebarHidden] = useState(false)
     const [expanded, setExpanded] = useState<Record<string, boolean>>({
         training: false
     })
@@ -20,15 +21,20 @@ export const Sidebar = () => {
         }))
     }
     
+    const handleSidebarToggle = () => {
+        setIsSidebarHidden(prev => !prev)
+    }
+    
     return (
-        <aside className={styles.sidebar}>
+        <aside className={styles.sidebar} data-collapsed={isSidebarHidden}>
             <header className={styles.sidebar__header}>
-                <YeaLogo />
+                <YeaLogo isSidebarHidden={isSidebarHidden}/>
 
                 <button
                     className={styles.sidebar__toggle}
                     type='button'
-                    aria-label='Свернуть меню'
+                    onClick={handleSidebarToggle}
+                    aria-label={isSidebarHidden ? 'Развернуть сайдбар' : 'Свернуть сайдбар'}
                 >
                     <SendSquareIcon size={20} />
                 </button>
@@ -43,8 +49,8 @@ export const Sidebar = () => {
                             return (
                                 <li key={id}>
                                     <a className={styles.nav__item} href={href}>
-                                        <Icon />
-                                        <span>{label}</span>
+                                        <Icon className={styles.nav__icon} />
+                                        <span className={styles.nav__label}>{label}</span>
                                     </a>
                                 </li>
                             )
@@ -67,8 +73,8 @@ export const Sidebar = () => {
                                         aria-controls={`${id}-submenu`}
                                         onClick={() => handleGroupToggle(id)}
                                     >
-                                        <Icon />
-                                        <span>{label}</span>
+                                        <Icon className={styles.nav__icon} />
+                                        <span className={styles.nav__label}>{label}</span>
 
                                         <span className={styles.nav__chevron}>
                                             <ChevroneDownIcon />
@@ -89,8 +95,8 @@ export const Sidebar = () => {
                                                         href={href}
                                                         key={id}
                                                     >
-                                                        <Icon />
-                                                        <span>{label}</span>
+                                                        <Icon className={styles.nav__icon} />
+                                                        <span className={styles.nav__label}>{label}</span>
                                                     </a>
                                                 )
                                             })}
@@ -106,14 +112,14 @@ export const Sidebar = () => {
             </nav>
 
             <footer className={styles.sidebar__footer}>
-                <Button variant='primary' as='a' href='/'>
-                    <ChatCircleText />
-                    <span>Поддержка</span>
+                <Button className={styles.footer__button} variant='primary' as='a' href='/'>
+                    <ChatCircleText className={styles.nav__icon} />
+                    <span className={styles.nav__label}>Поддержка</span>
                 </Button>
-
-                <Button variant='outline'>
-                    <LogoutIcon />
-                    <span>Выход</span>
+            
+                <Button className={styles.footer__button} variant='outline'>
+                    <LogoutIcon className={styles.nav__icon} />
+                    <span className={styles.nav__label}>Выход</span>
                 </Button>
             </footer>
         </aside>

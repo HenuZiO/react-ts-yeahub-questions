@@ -47,7 +47,7 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
         ]
     },
     {
-        id: 'Blog',
+        id: 'blog',
         type: 'group',
         label: 'Блог',
         Icon: NotebookIcon,
