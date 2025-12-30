@@ -6,6 +6,7 @@ import styles from './Button.module.css'
 const buttonVariants = {
     primary: styles.button__primary,
     outline: styles.button__outline,
+    destructive: styles.button__destructive,
     disable: styles.button__disable
 } as const
 

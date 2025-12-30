@@ -6,6 +6,7 @@
 
 .section__questions {
     flex-grow: 1;
+    height: 100%;
 }
 
 .section__filters {

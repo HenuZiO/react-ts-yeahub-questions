@@ -117,7 +117,7 @@ export const Sidebar = () => {
                     <span className={styles.nav__label}>Поддержка</span>
                 </Button>
             
-                <Button className={styles.footer__button} variant='outline'>
+                <Button className={styles.footer__button} variant='destructive'>
                     <LogoutIcon className={styles.nav__icon} />
                     <span className={styles.nav__label}>Выход</span>
                 </Button>
