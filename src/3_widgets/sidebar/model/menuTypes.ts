@@ -3,7 +3,7 @@ import React from 'react'
 type SidebarBaseItem = {
     id: string
     label: string
-    Icon: React.ComponentType
+    Icon: React.ComponentType<{ className?: string }>
 }
 
 export type SidebarLinkItem = SidebarBaseItem & {

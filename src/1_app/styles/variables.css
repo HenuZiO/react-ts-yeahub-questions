@@ -36,6 +36,7 @@
     /* Sizes */
     --height-header: 72px;
     --width-sidebar: 280px;
+    --width-small-sidebar: 88px;
     --width-avatar: 40px;
     /* Shadows */
     --shadow-main: 0 4px 10px rgba(106, 99, 118, 0.1);
