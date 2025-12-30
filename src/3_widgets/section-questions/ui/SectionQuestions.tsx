@@ -4,7 +4,7 @@ import { selectQuestionsQueryParams } from '@/4_features/questions-filters'
 import { QuestionItem, useGetQuestionsQuery } from '@/5_entities/question'
 import { SectionTitle } from '@/6_shared/ui/section-title'
 import { Section } from '@/6_shared/ui/section'
-import { EmptyState } from '@/6_shared/ui/empty-state/ui/EmptyState'
+import { EmptyState } from '@/6_shared/ui/empty-state'
 
 type SectionProps = {
     className: string

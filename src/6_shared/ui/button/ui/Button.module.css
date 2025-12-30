@@ -66,6 +66,12 @@
     outline: 2px solid var(--color-purple-600);
 }
 
+.button__badge {
+    background-color: var(--color-yellow-900);
+    color: var(--color-white-900);
+    pointer-events: none;
+}
+
 .button__disable {
     background-color: var(--color-black-100);
     color: var(--color-white-900);

@@ -7,6 +7,7 @@ const buttonVariants = {
     primary: styles.button__primary,
     outline: styles.button__outline,
     destructive: styles.button__destructive,
+    badge: styles.button__badge,
     disable: styles.button__disable
 } as const
 

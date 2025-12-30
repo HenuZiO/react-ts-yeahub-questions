@@ -66,3 +66,7 @@
     background-color: var(--color-purple-50);
     color: var(--color-purple-700);
 }
+
+.popover__profile {
+    min-width: 280px;
+}
