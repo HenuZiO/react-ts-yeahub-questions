@@ -6,7 +6,7 @@ import type { PopoverProps } from '../model/PopoverTypes'
 import styles from './Popover.module.css'
 
 export const Popover = (props: PopoverProps) => {
-    const { anchorRef, isOpen, onClose, children } = props
+    const { anchorRef, isOpen, onClose, children, minWidth } = props
     
     const { popoverRef, position } = usePopover({ anchorRef, isOpen })
     
@@ -22,7 +22,7 @@ export const Popover = (props: PopoverProps) => {
         <div
             className={styles.popover}
             ref={popoverRef}
-            style={position}
+            style={{...position, ...(minWidth && { minWidth })}}
         >
             {children}
         </div>

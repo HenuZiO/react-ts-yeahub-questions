@@ -5,4 +5,5 @@ export type PopoverProps = {
     isOpen: boolean
     onClose: () => void
     children: React.ReactNode
+    minWidth?: number
 }
