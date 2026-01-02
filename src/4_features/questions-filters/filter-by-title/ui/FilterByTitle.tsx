@@ -1,6 +1,8 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useAppDispatch } from '@/1_app/store'
 import { cn } from '@/6_shared/lib/utils/classnames'
+import { useDebounce } from '@/6_shared/lib/hooks'
+
 import { setTitle } from '../../model/questionsFiltersSlice'
 
 import { CloseCircleIcon, MagniferIcon } from '@/6_shared/ui/icon'
@@ -12,22 +14,33 @@ type FilterProps = {
 }
 
 export const FilterByTitle = ({ title }: FilterProps) => {
+    const [inputValue, setInputValue] = useState(title)
     const inputRef = useRef<HTMLInputElement>(null)
+    
+    const debouncedTitle = useDebounce(inputValue, 500)
     
     const dispatch = useAppDispatch()
     
+    useEffect(() => {
+        dispatch(setTitle(debouncedTitle))
+    }, [dispatch, debouncedTitle]);
+    
+    useEffect(() => {
+        setInputValue(title)
+    }, [title])
+    
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(setTitle(event.target.value))
+        setInputValue(event.target.value)
     }
     
     const handleInputClear = () => {
-        dispatch(setTitle(''))
+        setInputValue('')
         inputRef.current?.focus()
     }
     
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Escape') {
-            dispatch(setTitle(''))
+            setInputValue('')
             inputRef.current?.blur()
         }
     }
@@ -50,7 +63,7 @@ export const FilterByTitle = ({ title }: FilterProps) => {
                 id='questions-search'
                 type='text'
                 ref={inputRef}
-                value={title}
+                value={inputValue}
                 placeholder='Введите запрос...'
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
@@ -61,7 +74,7 @@ export const FilterByTitle = ({ title }: FilterProps) => {
                 className={clearButtonClassName}
                 type='button'
                 onClick={handleInputClear}
-                aria-hidden={!title}
+                aria-hidden={!inputValue}
             >
                 <CloseCircleIcon
                     className={cn(styles.search__icon, styles.search__icon_end)}
