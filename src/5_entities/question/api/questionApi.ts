@@ -1,6 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type { QuestionsQueryParams, QuestionsQueryResult } from '../model/questionQueryTypes'
-import type { QuestionsApiResponse } from '../model/questionTypes'
+import type {
+    QuestionQueryParams,
+    QuestionsQueryParams,
+    QuestionsQueryResult
+} from '../model/questionQueryTypes'
+import type { Question, QuestionsApiResponse } from '../model/questionTypes'
 
 export const questionApi = createApi({
     reducerPath: 'questionApi',
@@ -19,8 +23,13 @@ export const questionApi = createApi({
                 limit: response.limit,
                 total: response.total
             })
+        }),
+        getQuestionById: builder.query<Question, QuestionQueryParams>({
+            query: (id) => ({
+                url: `questions/public-questions/${id}`
+            })
         })
     })
 })
 
-export const { useGetQuestionsQuery } = questionApi
+export const { useGetQuestionsQuery, useGetQuestionByIdQuery } = questionApi

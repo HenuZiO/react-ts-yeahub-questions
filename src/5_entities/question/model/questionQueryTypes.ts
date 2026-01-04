@@ -12,6 +12,10 @@ export type QuestionsQueryParams = {
     keywords?: string[]
 }
 
+export type QuestionQueryParams = {
+    id: number
+}
+
 export type QuestionsQueryResult = {
     questions: Question[]
     page: number

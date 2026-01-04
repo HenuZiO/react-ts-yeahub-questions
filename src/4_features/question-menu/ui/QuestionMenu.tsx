@@ -1,22 +1,28 @@
-import { QUESTION_MENU_ITEMS } from '../config/questionMenuConfig'
+import { Link } from 'react-router'
+
+import { getQuestionMenuItems } from '../config/questionMenuConfig'
+import type { QuestionMenuProps } from '../model/questionMenuTypes'
 
 import styles from './QuestonMenu.module.css'
 
-export const QuestionMenu = () => {
+export const QuestionMenu = ({ questionId, onSelect }: QuestionMenuProps) => {
+    const questions = getQuestionMenuItems(questionId)
+    
     return (
         <ul className={styles.menu} role='menu'>
-           {QUESTION_MENU_ITEMS.map(({ id, label, href, Icon }) => (
-               <li key={id} role="none">
-                    <a
-                        href={href}
+            {questions.map(({ id, label, href, Icon }) => (
+                <li key={id} role='none'>
+                    <Link
                         className={styles.menu__item}
-                        role="menuitem"
+                        to={href}
+                        role='menuitem'
+                        onClick={onSelect}
                     >
                         <Icon size={20} />
                         <span>{label}</span>
-                    </a>
-                </li>
-           ))}
+                   </Link>
+               </li>
+            ))}
         </ul>
     )
 }
