@@ -49,7 +49,6 @@ export const QuestionFilters = () => {
             <FilterByComplexity complexity={complexity} />
             <FilterByRate rate={rate} />
             <FiltersReset hasActiveFilters={hasActiveFilters} />
-            
         </form>
     )
 }

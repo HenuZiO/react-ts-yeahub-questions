@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useAppDispatch } from '@/1_app/store'
 import type { Skill } from '@/5_entities/skill'
-import { SkillIcon } from '@/6_shared/ui/skill-icon'
 import { getSkillIcon } from '@/6_shared/lib/utils/skillIcon'
+import { FilterChip } from '@/6_shared/ui/filter-chip'
+
 import { toggleSkill } from '../../model/questionsFiltersSlice'
 
 import styles from '../../ui/QuestionsFilters.module.css'
@@ -35,15 +36,12 @@ export const FilterBySkills = ({ skills, selectedSkillIds }: FilterProps) => {
                     
                     return (
                         <li key={skill.id}>
-                            <button
-                                className={styles.group__button}
-                                type='button'
+                            <FilterChip
+                                label={skill.title}
+                                iconSrc={iconSrc}
+                                selected={isSelected}
                                 onClick={() => dispatch(toggleSkill(skill.id))}
-                                aria-pressed={isSelected}
-                            >
-                                {iconSrc && <SkillIcon src={iconSrc} title={skill.title} />}
-                                <span>{skill.title}</span>
-                            </button>
+                            />
                         </li>
                     )
                 })}

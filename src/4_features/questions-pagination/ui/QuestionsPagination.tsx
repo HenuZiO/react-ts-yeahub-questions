@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from '@/1_app/store'
 import {setPage, selectQuestionsQueryParams} from '@/4_features/questions-filters'
 import { useGetQuestionsQuery } from '@/5_entities/question'
 import { createPaginationItems } from '@/6_shared/lib/utils/pagination'
+
 import { ArrowLeftIcon, ArrowRightIcon } from '@/6_shared/ui/icon'
 
 import styles from './QuestionsPagination.module.css'

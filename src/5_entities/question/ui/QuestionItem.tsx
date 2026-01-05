@@ -1,4 +1,5 @@
 import React, { useId, useRef, useState } from 'react'
+import { QuestionMetaChip } from '@/6_shared/ui/question-meta-chip'
 
 import type { QuestionProps } from '../model/questionTypes'
 
@@ -31,7 +32,6 @@ export const QuestionItem = ({ question, onMenuOpen, isMenuOpen }: Props) => {
     }
     
     return (
-        
         <article className={styles.question} data-open={isItemOpen}>
             <header
                 className={styles.question__header}
@@ -44,10 +44,7 @@ export const QuestionItem = ({ question, onMenuOpen, isMenuOpen }: Props) => {
                     {question.title}
                 </h3>
                     
-                <span
-                    className={styles.question__toggle}
-                    aria-hidden='true'
-                >
+                <span className={styles.question__toggle} aria-hidden='true'>
                     {isItemOpen ? <ChevroneUpIcon /> : <ChevroneDownIcon />}
                 </span>
             </header>
@@ -56,15 +53,8 @@ export const QuestionItem = ({ question, onMenuOpen, isMenuOpen }: Props) => {
                 <div className={styles.question__inner}>
                     <div className={styles.question__meta}>
                         <dl className={styles.meta__info}>
-                            <div className={styles.meta__item}>
-                                <dt>Рейтинг:</dt>
-                                <dd className={styles.meta__value}>{question.rate}</dd>
-                            </div>
-                            
-                            <div className={styles.meta__item}>
-                                <dt>Сложность:</dt>
-                                <dd className={styles.meta__value}>{question.complexity}</dd>
-                            </div>
+                            <QuestionMetaChip label='Рейтинг' value={question.rate} />
+                            <QuestionMetaChip label='Сложность' value={question.complexity} />
                         </dl>
             
                         <button
@@ -82,10 +72,7 @@ export const QuestionItem = ({ question, onMenuOpen, isMenuOpen }: Props) => {
                         </button>
                     </div>
                     
-                    <div
-                        className={styles.question__text}
-                        dangerouslySetInnerHTML={{ __html: question.shortAnswer }}
-                    />
+                    <div className={styles.question__text} dangerouslySetInnerHTML={{ __html: question.shortAnswer }} />
                 </div>
             </div>
         </article>

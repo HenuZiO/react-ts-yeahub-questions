@@ -1,4 +1,4 @@
-import { ProfileBadge } from '@/6_shared/ui/profile-badge/ui/ProfileBadge'
+import { ProfileBadge } from '@/6_shared/ui/profile-badge'
 
 import { USER_MENU_ITEMS } from '../config/userMenuConfig'
 

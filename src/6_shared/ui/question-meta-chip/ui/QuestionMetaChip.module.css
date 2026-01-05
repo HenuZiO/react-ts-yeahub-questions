@@ -1,0 +1,18 @@
+.chip__item {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-black-10);
+    color: var(--color-black-800);
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 8px;
+    gap: 12px;
+    font-size: var(--font-size-small);
+}
+
+.chip__value {
+    background-color: var(--color-purple-700);
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: var(--color-white-900);
+}

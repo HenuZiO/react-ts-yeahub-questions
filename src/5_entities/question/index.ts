@@ -5,7 +5,7 @@ export { QuestionItem } from './ui/QuestionItem'
 export { questionApi } from './api/questionApi'
 
 // Hooks
-export { useGetQuestionsQuery } from './api/questionApi'
+export { useGetQuestionsQuery, useGetQuestionByIdQuery } from './api/questionApi'
 
 // Types
 export type { Question, QuestionsApiResponse } from './model/questionTypes'

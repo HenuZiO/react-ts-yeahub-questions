@@ -1,8 +1,11 @@
 import { useAppDispatch } from '@/1_app/store'
+import { FilterChip } from '@/6_shared/ui/filter-chip'
+
 import { toggleComplexity } from '../../model/questionsFiltersSlice'
 import { COMPLEXITY_GROUPS } from '../../config/complexityConfig'
 
 import styles from '../../ui/QuestionsFilters.module.css'
+
 
 type FilterProps = {
     complexity: number[]
@@ -23,18 +26,15 @@ export const FilterByComplexity = ({ complexity }: FilterProps) => {
                     
                     return (
                         <li key={group.label}>
-                            <button
-                                className={styles.group__button}
-                                type='button'
-                                aria-pressed={isActive}
+                            <FilterChip
+                                label={group.label}
+                                selected={isActive}
                                 onClick={() => {
                                     group.values.forEach(value => {
                                         dispatch(toggleComplexity(value))
                                     })
                                 }}
-                            >
-                                {group.label}
-                            </button>
+                            />
                         </li>
                     )
                 })}

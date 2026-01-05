@@ -3,6 +3,7 @@ import { toggleRate } from '../../model/questionsFiltersSlice'
 import { RATE_VALUES } from '../../config/rateConfig'
 
 import styles from '../../ui/QuestionsFilters.module.css'
+import { FilterChip } from '@/6_shared/ui/filter-chip'
 
 type FilterProps = {
     rate: number[]
@@ -23,14 +24,11 @@ export const FilterByRate = ({ rate }: FilterProps) => {
                     
                     return (
                         <li key={value}>
-                            <button
-                                className={styles.group__button}
-                                type='button'
-                                aria-pressed={isActive}
+                            <FilterChip
+                                label={value}
+                                selected={isActive}
                                 onClick={() => dispatch(toggleRate(value))}
-                            >
-                                {value}
-                            </button>
+                            />
                         </li>
                     )
                 })}

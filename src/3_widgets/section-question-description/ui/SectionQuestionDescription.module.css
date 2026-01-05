@@ -1,0 +1,10 @@
+.section__question_description {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.question__description {
+    color: var(--color-black-700);
+}
