@@ -8,12 +8,10 @@ import { toggleSkill } from '../../model/questionsFiltersSlice'
 
 import styles from '../../ui/QuestionsFilters.module.css'
 
-type FilterProps = {
-    skills: Skill[]
+export const FilterBySkills = ({ skills, selectedSkillIds }: {
+    skills: Skill[],
     selectedSkillIds: number[]
-}
-
-export const FilterBySkills = ({ skills, selectedSkillIds }: FilterProps) => {
+}) => {
     const [isExpanded, setIsExpanded] = useState(false)
     
     const dispatch = useAppDispatch()

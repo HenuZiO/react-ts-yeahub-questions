@@ -1,4 +1,5 @@
 import { baseApi } from '@/6_shared/api'
+
 import type { SkillsApiResponse } from '../model/skillTypes'
 import type { SkillsQueryResult, SkillsQueryParams } from '../model/skillsQueryTypes'
 

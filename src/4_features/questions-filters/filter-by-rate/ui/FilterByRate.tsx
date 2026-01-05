@@ -1,15 +1,12 @@
 import { useAppDispatch } from '@/1_app/store'
+import { FilterChip } from '@/6_shared/ui/filter-chip'
+
 import { toggleRate } from '../../model/questionsFiltersSlice'
 import { RATE_VALUES } from '../../config/rateConfig'
 
 import styles from '../../ui/QuestionsFilters.module.css'
-import { FilterChip } from '@/6_shared/ui/filter-chip'
 
-type FilterProps = {
-    rate: number[]
-}
-
-export const FilterByRate = ({ rate }: FilterProps) => {
+export const FilterByRate = ({ rate }: { rate: number[] }) => {
     const dispatch = useAppDispatch()
     
     return (
