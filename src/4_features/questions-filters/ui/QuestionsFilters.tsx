@@ -1,28 +1,18 @@
 import React from 'react'
-
-import { useAppSelector } from '@/1_app/store'
 import { useGetSkillsQuery } from '@/5_entities/skill'
 
-import { FilterByTitle } from '../filter-by-title'
-import { FilterBySkills } from '../filter-by-skills'
-import { FilterByComplexity } from '../filter-by-complexity'
-import { FilterByRate } from '../filter-by-rate'
-import { FiltersReset } from '../filters-reset'
+import { useQuestionFilters } from '../lib/useQuestionFilters'
 
-import {
-    selectChosenComplexity,
-    selectChosenRate,
-    selectChosenSkills,
-    selectEnteredTitle
-} from '../model/questionsFiltersSelectors'
+import { FilterByTitle } from './FilterByTitle'
+import { FilterBySkills } from './FilterBySkills'
+import { FilterByComplexity } from './FilterByComplexity'
+import { FilterByRate } from './FilterByRate'
+import { FiltersReset } from './FiltersReset'
 
 import styles from './QuestionsFilters.module.css'
 
 export const QuestionFilters = () => {
-    const title = useAppSelector(selectEnteredTitle)
-    const skills = useAppSelector(selectChosenSkills)
-    const complexity = useAppSelector(selectChosenComplexity)
-    const rate = useAppSelector(selectChosenRate)
+    const { title, skills, complexity, rate, hasActiveFilters, onReset } = useQuestionFilters()
     
     const { data, isLoading } = useGetSkillsQuery({ page: 1, limit: 100 })
     
@@ -31,8 +21,6 @@ export const QuestionFilters = () => {
     }
     
     const skillsList = data?.skills ?? []
-    
-    const hasActiveFilters = title.trim().length > 0 || skills.length > 0 || complexity.length > 0 || rate.length > 0
     
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -48,7 +36,7 @@ export const QuestionFilters = () => {
             <FilterBySkills skills={skillsList} selectedSkillIds={skills} />
             <FilterByComplexity complexity={complexity} />
             <FilterByRate rate={rate} />
-            <FiltersReset hasActiveFilters={hasActiveFilters} />
+            <FiltersReset hasActiveFilters={hasActiveFilters} onReset={onReset} />
         </form>
     )
 }

@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import type { QuestionsFiltersState } from './questionsFiltersTypes'
 
 const initialState: QuestionsFiltersState = {
@@ -34,13 +34,21 @@ const questionsFiltersSlice = createSlice({
             
             state.page = 1
         },
-        toggleComplexity: (state, action: PayloadAction<number>) => {
-            const selectedValue = action.payload
+        toggleComplexityGroup: (state, action: PayloadAction<number[]>) => {
+            const values = action.payload
             
-            if (state.complexity.includes(selectedValue)) {
-                state.complexity = state.complexity.filter(value => selectedValue !== value)
+            const hasAnySelected = values.some(value => state.complexity.includes(value))
+            
+            if (hasAnySelected) {
+                state.complexity = state.complexity.filter(
+                    value => !values.includes(value)
+                )
             } else {
-                state.complexity.push(selectedValue)
+                values.forEach(value => {
+                    if (!state.complexity.includes(value)) {
+                        state.complexity.push(value)
+                    }
+                })
             }
             
             state.page = 1
@@ -70,7 +78,7 @@ export const {
     setPage,
     setTitle,
     toggleSkill,
-    toggleComplexity,
+    toggleComplexityGroup,
     toggleRate,
     resetFilters
 } = questionsFiltersSlice.actions

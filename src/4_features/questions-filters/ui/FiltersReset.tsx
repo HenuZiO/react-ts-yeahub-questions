@@ -1,16 +1,18 @@
-import { useAppDispatch } from '@/1_app/store'
 import { Button } from '@/6_shared/ui/button'
 
-import { resetFilters } from '../../model/questionsFiltersSlice'
+type FiltersResetProps = {
+    hasActiveFilters: boolean
+    onReset: () => void
+}
 
-export const FiltersReset = ({ hasActiveFilters }: { hasActiveFilters: boolean }) => {
-    const dispatch = useAppDispatch()
+export const FiltersReset = (props: FiltersResetProps) => {
+    const { hasActiveFilters, onReset } = props
     
     return (
         <Button
             variant={hasActiveFilters ? 'primary' : 'disable'}
             type='reset'
-            onClick={() => dispatch(resetFilters())}
+            onClick={onReset}
             aria-label='Очистить фильтры'
             disabled={!hasActiveFilters}
         >
