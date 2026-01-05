@@ -5,7 +5,7 @@ export { QuestionFilters } from './ui/QuestionsFilters'
 export { default as questionsFiltersReducer } from './model/questionsFiltersSlice'
 
 // Reducers
-export { setPage } from './model/questionsFiltersSlice'
+export { setPage, toggleSkill, resetFilters } from './model/questionsFiltersSlice'
 
 // Selectors
 export { selectQuestionsQueryParams } from './model/questionsFiltersSelectors'

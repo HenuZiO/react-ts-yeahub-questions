@@ -4,12 +4,15 @@
     margin-top: 24px;
 }
 
-.section__questions {
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     flex-grow: 1;
     height: 100%;
 }
 
-.section__filters {
+.additional {
     max-width: 360px;
     width: 100%;
     height: 100%;

@@ -1,9 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type {
-    QuestionQueryParams,
-    QuestionsQueryParams,
-    QuestionsQueryResult
-} from '../model/questionQueryTypes'
+import type { QuestionsQueryParams, QuestionsQueryResult } from '../model/questionQueryTypes'
 import type { Question, QuestionsApiResponse } from '../model/questionTypes'
 
 export const questionApi = createApi({
@@ -24,7 +20,7 @@ export const questionApi = createApi({
                 total: response.total
             })
         }),
-        getQuestionById: builder.query<Question, QuestionQueryParams>({
+        getQuestionById: builder.query<Question, number>({
             query: (id) => ({
                 url: `questions/public-questions/${id}`
             })

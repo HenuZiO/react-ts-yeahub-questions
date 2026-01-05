@@ -1,0 +1,1 @@
+export { QuestionMetaChip } from './ui/QuestionMetaChip'

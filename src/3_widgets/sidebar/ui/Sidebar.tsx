@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/6_shared/ui/button'
 import { YeaLogo } from '@/6_shared/ui/logo'
 import { cn } from '@/6_shared/lib/utils/classnames'
+
 import { SIDEBAR_ITEMS } from '../config/menuConfig'
 
 import { ChatCircleText, ChevroneDownIcon, LogoutIcon, SendSquareIcon } from '@/6_shared/ui/icon'

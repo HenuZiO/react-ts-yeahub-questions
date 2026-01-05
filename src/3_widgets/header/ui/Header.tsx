@@ -1,16 +1,16 @@
 import { useRef, useState } from 'react'
 import { SettingsMenu } from '@/4_features/settings-menu'
+import { UserMenu } from '@/4_features/user-menu'
 import { Popover } from '@/6_shared/ui/popover'
 
 import { SettingsIcon } from '@/6_shared/ui/icon'
 
 import styles from './Header.module.css'
-import { UserMenu } from '@/4_features/user-menu'
 
 export const Header = () => {
     const settingsRef = useRef<HTMLButtonElement>(null)
     const profileRef = useRef<HTMLButtonElement>(null)
-    const [isPopupOpen, setIsPopupOpen] = useState(false)
+    const [isSettingsOpen, setIsSettingsOpen] = useState(false)
     const [isProfileOpen, setIsProfileOpen] = useState(false)
     
     return (
@@ -25,10 +25,10 @@ export const Header = () => {
                         className={styles.menu__settings}
                         type='button'
                         ref={settingsRef}
-                        onClick={() => setIsPopupOpen(prev => !prev)}
-                        aria-label={isPopupOpen ? 'Закрыть настройки' : 'Открыть настройки'}
+                        onClick={() => setIsSettingsOpen(prev => !prev)}
+                        aria-label={isSettingsOpen ? 'Закрыть настройки' : 'Открыть настройки'}
                         aria-haspopup='true'
-                        aria-expanded={isPopupOpen}
+                        aria-expanded={isSettingsOpen}
                     >
                         <SettingsIcon size={20} />
                     </button>
@@ -55,8 +55,8 @@ export const Header = () => {
             
             <Popover
                 anchorRef={settingsRef}
-                isOpen={isPopupOpen}
-                onClose={() => setIsPopupOpen(false)}
+                isOpen={isSettingsOpen}
+                onClose={() => setIsSettingsOpen(false)}
             >
                 <SettingsMenu />
             </Popover>

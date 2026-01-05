@@ -1,20 +1,33 @@
+import { Link } from 'react-router'
+
+import type { BreadcrumbsProps } from '../model/BreadcrumbsTypes'
+
 import styles from './Breadcrumbs.module.css'
 
-export const Breadcrumbs = () => {
+export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
+    
+    if (!items.length) return null
+    
     return (
         <nav className={styles.breadcrumbs} aria-label='Хлебные крошки'>
             <ol className={styles.breadcrumbs__list}>
-                <li className={styles.list__item}>
-                    <a className={styles.list__link} href='/'>
-                        Обучение
-                    </a>
-                </li>
-
-                <li className={styles.list__item}>
-                    <span aria-current='page'>
-                        Список вопросов
-                    </span>
-                </li>
+                {items.map((item, index) => {
+                    const isLast = index === items.length - 1
+                    
+                    return (
+                        <li key={`${item.label}-${index}`} className={styles.list__item}>
+                            {item.to && !isLast ? (
+                                <Link className={styles.list__link} to={item.to}>
+                                    {item.label}
+                                </Link>
+                            ) : (
+                                <span aria-current={isLast ? 'page' : undefined}>
+                                    {item.label}
+                                </span>
+                            )}
+                        </li>
+                    )
+                })}
             </ol>
         </nav>
     )
