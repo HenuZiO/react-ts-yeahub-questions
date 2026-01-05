@@ -1,12 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { baseApi } from '@/6_shared/api'
 import type { SkillsApiResponse } from '../model/skillTypes'
 import type { SkillsQueryResult, SkillsQueryParams } from '../model/skillsQueryTypes'
 
-export const skillApi = createApi({
-    reducerPath: 'skillApi',
-    baseQuery: fetchBaseQuery({
-        baseUrl: 'https://api.yeatwork.ru/'
-    }),
+export const skillApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
         getSkills: builder.query<SkillsQueryResult, SkillsQueryParams>({
             query: (params) => ({
@@ -21,6 +17,7 @@ export const skillApi = createApi({
             })
         }),
     }),
+    overrideExisting: false
 })
 
 export const { useGetSkillsQuery } = skillApi

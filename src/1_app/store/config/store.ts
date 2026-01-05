@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
+import { baseApi } from '@/6_shared/api'
+
 import { rootReducer } from './reducers'
-import { questionApi } from '@/5_entities/question'
-import { skillApi } from '@/5_entities/skill'
 
 export const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => {
-        return getDefaultMiddleware().concat(questionApi.middleware, skillApi.middleware)
+        return getDefaultMiddleware().concat(baseApi.middleware)
     }
 })
 

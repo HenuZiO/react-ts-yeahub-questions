@@ -1,12 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { baseApi } from '@/6_shared/api'
 import type { QuestionsQueryParams, QuestionsQueryResult } from '../model/questionQueryTypes'
 import type { Question, QuestionsApiResponse } from '../model/questionTypes'
 
-export const questionApi = createApi({
-    reducerPath: 'questionApi',
-    baseQuery: fetchBaseQuery({
-        baseUrl: 'https://api.yeatwork.ru/'
-    }),
+export const questionApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
         getQuestions: builder.query<QuestionsQueryResult, QuestionsQueryParams>({
             query: (params) => ({
@@ -25,7 +21,8 @@ export const questionApi = createApi({
                 url: `questions/public-questions/${id}`
             })
         })
-    })
+    }),
+    overrideExisting: false
 })
 
 export const { useGetQuestionsQuery, useGetQuestionByIdQuery } = questionApi
