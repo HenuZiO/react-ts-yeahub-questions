@@ -3,11 +3,11 @@ import { useAppDispatch } from '@/1_app/store'
 import { cn } from '@/6_shared/lib/utils/classnames'
 import { useDebounce } from '@/6_shared/lib/hooks'
 
-import { setTitle } from '../../model/questionsFiltersSlice'
+import { setTitle } from '../model/questionsFiltersSlice'
 
 import { CloseCircleIcon, MagniferIcon } from '@/6_shared/ui/icon'
 
-import styles from '../../ui/QuestionsFilters.module.css'
+import styles from './QuestionsFilters.module.css'
 
 export const FilterByTitle = ({ title }: { title: string }) => {
     const [inputValue, setInputValue] = useState(title)
@@ -41,7 +41,7 @@ export const FilterByTitle = ({ title }: { title: string }) => {
         }
     }
     
-    const clearButtonClassName = cn(styles.search__clear, title && styles.search__clear_visible)
+    const clearButtonClassName = cn(styles.search__clear, inputValue && styles.search__clear_visible)
     
     return (
         <div className={styles.filters__search}>
@@ -70,7 +70,7 @@ export const FilterByTitle = ({ title }: { title: string }) => {
                 className={clearButtonClassName}
                 type='button'
                 onClick={handleInputClear}
-                aria-hidden={!inputValue}
+                disabled={!inputValue}
             >
                 <CloseCircleIcon
                     className={cn(styles.search__icon, styles.search__icon_end)}

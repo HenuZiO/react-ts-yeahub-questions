@@ -4,29 +4,28 @@ import type { Skill } from '@/5_entities/skill'
 import { getSkillIcon } from '@/6_shared/lib/utils/skillIcon'
 import { FilterChip } from '@/6_shared/ui/filter-chip'
 
-import { toggleSkill } from '../../model/questionsFiltersSlice'
+import { FilterGroup } from './FilterGroup'
 
-import styles from '../../ui/QuestionsFilters.module.css'
+import { toggleSkill } from '../model/questionsFiltersSlice'
 
-export const FilterBySkills = ({ skills, selectedSkillIds }: {
-    skills: Skill[],
+import styles from './QuestionsFilters.module.css'
+
+type FilterBySkillsProps = {
+    skills: Skill[]
     selectedSkillIds: number[]
-}) => {
+}
+
+export const FilterBySkills = ({ skills, selectedSkillIds }: FilterBySkillsProps) => {
     const [isExpanded, setIsExpanded] = useState(false)
     
     const dispatch = useAppDispatch()
     
-    const visibleSkills = isExpanded
-        ? skills.filter(skill => skill.createdBy === null)
-        : skills.filter(skill => skill.createdBy === null)
-            .slice(0, 5)
+    const baseSkills = skills.filter(skill => skill.createdBy === null)
+    
+    const visibleSkills = isExpanded ? baseSkills : baseSkills.slice(0, 5)
     
     return (
-        <fieldset className={styles.filters__group}>
-            <legend className={styles.group__title}>
-                Категории вопросов
-            </legend>
-
+        <FilterGroup title='Категории вопросов'>
             <ul className={styles.group__list} id='categories-list'>
                 {visibleSkills.map(skill => {
                     const iconSrc = getSkillIcon(skill.title)
@@ -50,12 +49,12 @@ export const FilterBySkills = ({ skills, selectedSkillIds }: {
                     className={styles.group__more}
                     type='button'
                     onClick={() => setIsExpanded(prev => !prev)}
-                    aria-expanded='false'
+                    aria-expanded={isExpanded}
                     aria-controls='categories-list'
                 >
                     {isExpanded ? 'Свернуть' : 'Посмотреть все'}
                 </button>
             )}
-        </fieldset>
+        </FilterGroup>
     )
 }

@@ -1,1 +1,0 @@
-export { FiltersReset } from './ui/FiltersReset'

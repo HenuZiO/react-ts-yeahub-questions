@@ -1,20 +1,18 @@
 import { useAppDispatch } from '@/1_app/store'
 import { FilterChip } from '@/6_shared/ui/filter-chip'
 
-import { toggleRate } from '../../model/questionsFiltersSlice'
-import { RATE_VALUES } from '../../config/rateConfig'
+import { FilterGroup } from './FilterGroup'
 
-import styles from '../../ui/QuestionsFilters.module.css'
+import { toggleRate } from '../model/questionsFiltersSlice'
+import { RATE_VALUES } from '../config/rateConfig'
+
+import styles from './QuestionsFilters.module.css'
 
 export const FilterByRate = ({ rate }: { rate: number[] }) => {
     const dispatch = useAppDispatch()
     
     return (
-        <fieldset className={styles.filters__group}>
-            <legend className={styles.group__title}>
-                Рейтинг
-            </legend>
-                
+        <FilterGroup title='Рейтинг'>
             <ul className={styles.group__list}>
                 {RATE_VALUES.map(value => {
                     const isActive = rate.includes(value)
@@ -30,6 +28,6 @@ export const FilterByRate = ({ rate }: { rate: number[] }) => {
                     )
                 })}
             </ul>
-        </fieldset>
+        </FilterGroup>
     )
 }
