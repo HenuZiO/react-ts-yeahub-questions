@@ -6,12 +6,7 @@ import { COMPLEXITY_GROUPS } from '../../config/complexityConfig'
 
 import styles from '../../ui/QuestionsFilters.module.css'
 
-
-type FilterProps = {
-    complexity: number[]
-}
-
-export const FilterByComplexity = ({ complexity }: FilterProps) => {
+export const FilterByComplexity = ({ complexity }: { complexity: number[] }) => {
     const dispatch = useAppDispatch()
     
     return (

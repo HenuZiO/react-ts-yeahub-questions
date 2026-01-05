@@ -9,11 +9,7 @@ import { CloseCircleIcon, MagniferIcon } from '@/6_shared/ui/icon'
 
 import styles from '../../ui/QuestionsFilters.module.css'
 
-type FilterProps = {
-    title: string
-}
-
-export const FilterByTitle = ({ title }: FilterProps) => {
+export const FilterByTitle = ({ title }: { title: string }) => {
     const [inputValue, setInputValue] = useState(title)
     const inputRef = useRef<HTMLInputElement>(null)
     

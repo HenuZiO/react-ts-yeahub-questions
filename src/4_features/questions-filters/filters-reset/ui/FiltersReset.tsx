@@ -1,12 +1,9 @@
 import { useAppDispatch } from '@/1_app/store'
 import { Button } from '@/6_shared/ui/button'
+
 import { resetFilters } from '../../model/questionsFiltersSlice'
 
-type FilterProps = {
-    hasActiveFilters: boolean
-}
-
-export const FiltersReset = ({hasActiveFilters}: FilterProps) => {
+export const FiltersReset = ({ hasActiveFilters }: { hasActiveFilters: boolean }) => {
     const dispatch = useAppDispatch()
     
     return (
