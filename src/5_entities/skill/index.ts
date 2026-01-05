@@ -1,6 +1,3 @@
-// Main API
-export { skillApi } from './api/skillApi'
-
 // Hooks
 export { useGetSkillsQuery } from './api/skillApi'
 
