@@ -1,32 +1,23 @@
 import { useNavigate } from 'react-router'
 import { useAppDispatch } from '@/1_app/store'
 import { resetFilters, toggleSkill } from '@/4_features/questions-filters'
-import { useGetQuestionByIdQuery } from '@/5_entities/question'
+import type { Question } from '@/5_entities/question'
 import { Section } from '@/6_shared/ui/section'
 import { QuestionMetaChip } from '@/6_shared/ui/question-meta-chip'
 import { FilterChip } from '@/6_shared/ui/filter-chip'
 import { getSkillIcon } from '@/6_shared/lib/utils/skillIcon'
 import { routes } from '@/6_shared/config/routes'
 
-import styles from './SectionQuestionMeta.module.css'
+import styles from './QuestionMeta.module.css'
 
-type SectionProps = {
-    questionId: number
+type QuestionMetaProps = {
+    question: Question
 }
 
-export const SectionQuestionMeta = ({ questionId }: SectionProps) => {
-    const { data: question, isLoading } = useGetQuestionByIdQuery(questionId)
-    const dispatch = useAppDispatch()
+export const QuestionMeta = ({ question }: QuestionMetaProps) => {
     const navigate = useNavigate()
-    
-    if (isLoading) {
-        return <div>Идет загрузка данных вопроса...</div>
-    }
-    
-    if (!question) {
-        return <div>Вопрос не найден...</div>
-    }
-    
+    const dispatch = useAppDispatch()
+
     const handleNavigateToQuestions = (skillId: number) => {
         dispatch(resetFilters())
         dispatch(toggleSkill(skillId))
@@ -48,7 +39,7 @@ export const SectionQuestionMeta = ({ questionId }: SectionProps) => {
             <div className={styles.group}>
                 <h3 className={styles.group__title}>Навыки:</h3>
                 
-                <ul className={styles.skills__list} id='skills-list'>
+                <ul className={styles.skills__list}>
                     {question.questionSkills.map(skill => (
                         <FilterChip
                             className={styles.chip}
@@ -64,7 +55,7 @@ export const SectionQuestionMeta = ({ questionId }: SectionProps) => {
             <div className={styles.group}>
                 <h3 className={styles.group__title}>Ключевые слова:</h3>
                 
-                <ul className={styles.keywords__text}>
+                <ul className={styles.keywords__list}>
                     {question.keywords.map(keyword => (
                         <li>#{keyword}</li>
                     ))}

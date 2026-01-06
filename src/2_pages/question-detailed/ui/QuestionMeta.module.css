@@ -24,7 +24,7 @@
     gap: 8px;
 }
 
-.keywords__text {
+.keywords__list {
     color: var(--color-purple-700);
     display: flex;
     flex-wrap: wrap;
