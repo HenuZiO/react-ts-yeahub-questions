@@ -26,7 +26,6 @@ export const QuestionsPage = () => {
                 <div className={styles.additional}>
                     <SectionFilters className={styles.section__filters} />
                 </div>
-                
             </Container>
         </>
     )

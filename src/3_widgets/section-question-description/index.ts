@@ -1,1 +1,0 @@
-export { SectionQuestionDescription } from './ui/SectionQuestionDescription'

@@ -1,25 +1,15 @@
-import { useGetQuestionByIdQuery } from '@/5_entities/question'
+import type { Question } from '@/5_entities/question'
 import { Section } from '@/6_shared/ui/section'
 import { SectionTitle } from '@/6_shared/ui/section-title'
 import { getSkillIcon } from '@/6_shared/lib/utils/skillIcon'
 
-import styles from './SectionQuestionDescription.module.css'
+import styles from './QuestionDescription.module.css'
 
-type SectionProps = {
-    questionId: number
+type QuestionDescriptionProps = {
+    question: Question
 }
 
-export const SectionQuestionDescription = ({ questionId }: SectionProps) => {
-    const { data: question, isLoading } = useGetQuestionByIdQuery(questionId)
-    
-    if (isLoading) {
-        return <div>Идет загрузка данных вопроса...</div>
-    }
-    
-    if (!question) {
-        return <div>Вопрос не найден...</div>
-    }
-    
+export const QuestionDescription = ({ question }: QuestionDescriptionProps) => {
     const skillIconSrc = getSkillIcon(question.questionSkills[0].title)
     
     return (
