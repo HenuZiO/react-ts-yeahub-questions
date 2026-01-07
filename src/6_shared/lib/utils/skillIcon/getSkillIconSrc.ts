@@ -3,7 +3,7 @@ export const SKILL_ICON_MAP: Record<string, string> = {
     css: "css3",
     postgres: "postgresql",
     networks: "networkx",
-    "c#": "cplusplus",
+    "c#": "csharp",
     "c++": "cplusplus",
     net: "dot-net",
     html: "html5",

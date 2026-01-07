@@ -1,1 +1,1 @@
-export { getSkillIcon } from './getSkillIconSrc.ts'
+export { getSkillIcon } from './getSkillIconSrc'
