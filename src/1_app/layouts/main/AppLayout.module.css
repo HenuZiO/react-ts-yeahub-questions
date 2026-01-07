@@ -1,0 +1,19 @@
+.page {
+    display: flex;
+    height: 100vh;
+}
+
+.page__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+.main {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}

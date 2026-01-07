@@ -1,9 +1,0 @@
-.logo__wrapper {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.logo__img, .logo__text {
-    flex-shrink: 0;
-}

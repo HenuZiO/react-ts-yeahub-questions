@@ -1,0 +1,32 @@
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.group__title {
+    color: var(--color-black-700);
+    opacity: 0.66;
+    font-size: var(--font-size-normal);
+    line-height: var(--font-line-normal);
+    font-weight: 500;
+}
+
+.meta__list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.skills__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.keywords__list {
+    color: var(--color-purple-700);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}

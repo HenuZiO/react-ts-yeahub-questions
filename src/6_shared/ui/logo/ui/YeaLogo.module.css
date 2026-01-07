@@ -1,0 +1,17 @@
+.logo__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo__img, .logo__text {
+    opacity: 1;
+    flex-shrink: 0;
+    transition: opacity 0.3s ease;
+}
+
+.logo__hidden {
+    opacity: 0;
+    width: 0;
+    pointer-events: none;
+}

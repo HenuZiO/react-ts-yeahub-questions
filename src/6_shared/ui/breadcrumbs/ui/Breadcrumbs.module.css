@@ -1,0 +1,43 @@
+.breadcrumbs {
+    margin-top: 20px;
+}
+
+.breadcrumbs__list {
+    display: flex;
+    align-items: center;
+}
+
+.list__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.list__item:not(:last-child)::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-purple-700);
+    mask-image: url("/icons/caret-right.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    padding-inline: 18px;
+}
+
+.list__item [aria-current="page"] {
+    color: var(--color-purple-700);
+}
+
+.list__link {
+    color: var(--color-black-800);
+    transition: color 0.3s ease;
+}
+
+.list__link:hover {
+    color: var(--color-purple-700);
+}
+
+.list__link:focus-visible {
+    outline: 2px solid var(--color-purple-700);
+}

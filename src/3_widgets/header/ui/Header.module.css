@@ -5,8 +5,6 @@
     border-bottom: 1px solid var(--color-black-50);
     width: 100%;
     padding-inline: 20px;
-    position: sticky;
-    top: 0;
     background-color: var(--color-black-25);
     z-index: 50;
 }
@@ -20,6 +18,7 @@
 
 .menu__settings {
     padding: 8px;
+    transition: color 0.3s ease;
 }
 
 .menu__settings:hover {
@@ -39,3 +38,35 @@
     object-fit: cover;
 }
 
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu__item,
+.menu__item_active {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--font-size-small);
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: var(--color-black-800);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu__item:hover {
+    background-color: var(--color-black-10);
+    color: var(--color-purple-700);
+}
+
+.menu__item_active {
+    background-color: var(--color-purple-50);
+    color: var(--color-purple-700);
+}
+
+.popover__profile {
+    min-width: 280px;
+}

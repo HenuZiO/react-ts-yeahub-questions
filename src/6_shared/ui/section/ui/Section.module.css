@@ -1,0 +1,31 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white-900);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: var(--shadow-main);
+    gap: 16px;
+}
+
+.image__wrapper {
+    display: grid;
+    place-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: linear-gradient(180deg,
+    var(--color-purple-50) 0%,
+    var(--color-black-10) 35%,
+    var(--color-black-25) 100%);
+    border: 1px solid var(--color-black-50);
+}
+
+.image {
+    max-width: 92px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

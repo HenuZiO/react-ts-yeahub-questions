@@ -1,0 +1,22 @@
+.sections {
+    display: flex;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.additional {
+    max-width: 360px;
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    top: 16px;
+    flex-shrink: 0;
+}

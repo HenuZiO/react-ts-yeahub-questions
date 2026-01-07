@@ -1,0 +1,5 @@
+.button__badge {
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    max-height: 38px;
+}
