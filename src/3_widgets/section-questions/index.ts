@@ -1,1 +1,0 @@
-export { SectionQuestions } from './ui/SectionQuestions'

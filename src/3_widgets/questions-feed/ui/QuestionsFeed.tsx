@@ -5,15 +5,11 @@ import { selectQuestionsQueryParams } from '@/4_features/questions-filters'
 import { QuestionMenu } from '@/4_features/question-menu'
 import { QuestionItem, useGetQuestionsQuery } from '@/5_entities/question'
 import { EmptyState } from '@/6_shared/ui/empty-state'
+import { Popover } from '@/6_shared/ui/popover'
 import { Section } from '@/6_shared/ui/section'
 import { SectionTitle } from '@/6_shared/ui/section-title'
-import { Popover } from '@/6_shared/ui/popover'
 
-type SectionProps = {
-    className: string
-}
-
-export const SectionQuestions = ({ className }: SectionProps) => {
+export const QuestionsFeed = () => {
     const queryParams = useAppSelector(selectQuestionsQueryParams)
     const { data, isLoading } = useGetQuestionsQuery(queryParams)
     
@@ -39,7 +35,7 @@ export const SectionQuestions = ({ className }: SectionProps) => {
     }
     
     return (
-        <Section className={className}>
+        <Section>
             <SectionTitle>
                 Вопросы для собеседований
             </SectionTitle>

@@ -1,7 +1,7 @@
-import { SectionQuestions } from '@/3_widgets/section-questions'
-import { SectionFilters } from '@/3_widgets/section-filters'
-import type { BreadcrumbItem } from '@/6_shared/ui/breadcrumbs'
+import { QuestionsFeed } from '@/3_widgets/questions-feed'
+import { QuestionsFiltersSidebar } from '@/3_widgets/questions-filters-sidebar'
 import { Breadcrumbs } from '@/6_shared/ui/breadcrumbs'
+import type { BreadcrumbItem } from '@/6_shared/ui/breadcrumbs'
 import { Container } from '@/6_shared/ui/container'
 
 import styles from './QuestionsPage.module.css'
@@ -20,11 +20,11 @@ export const QuestionsPage = () => {
 
             <Container className={styles.sections}>
                 <div className={styles.main}>
-                    <SectionQuestions className={styles.section__questions} />
+                    <QuestionsFeed />
                 </div>
                 
                 <div className={styles.additional}>
-                    <SectionFilters className={styles.section__filters} />
+                    <QuestionsFiltersSidebar />
                 </div>
             </Container>
         </>

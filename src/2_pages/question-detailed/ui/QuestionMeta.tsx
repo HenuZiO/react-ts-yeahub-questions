@@ -9,6 +9,7 @@ import { getSkillIcon } from '@/6_shared/lib/utils/skillIcon'
 import { routes } from '@/6_shared/config/routes'
 
 import styles from './QuestionMeta.module.css'
+import { SectionTitle } from '@/6_shared/ui/section-title'
 
 type QuestionMetaProps = {
     question: Question
@@ -27,6 +28,10 @@ export const QuestionMeta = ({ question }: QuestionMetaProps) => {
     
     return (
         <Section>
+            <SectionTitle className='visually-hidden'>
+                Информация о вопросе
+            </SectionTitle>
+            
             <div className={styles.group}>
                 <h3 className={styles.group__title}>Уровень:</h3>
                 
