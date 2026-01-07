@@ -5,5 +5,5 @@ export { QuestionItem } from './ui/QuestionItem'
 export { useGetQuestionsQuery, useGetQuestionByIdQuery } from './api/questionApi'
 
 // Types
-export type { Question, QuestionsApiResponse } from './model/questionTypes'
-export type { QuestionsQueryParams, QuestionsQueryResult } from './model/questionApiTypes'
+export type { Question } from './model/questionTypes'
+export type { QuestionsApiResponse, QuestionsQueryParams, QuestionsQueryResult } from './model/questionApiTypes'
