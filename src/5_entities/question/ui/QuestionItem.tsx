@@ -1,20 +1,14 @@
 import React, { useId, useRef, useState } from 'react'
 import { QuestionMetaChip } from '@/6_shared/ui/question-meta-chip'
 
-import type { QuestionProps } from '../model/questionTypes'
-
 import { ChevroneDownIcon, ChevroneUpIcon } from '@/6_shared/ui/icon'
+
+import type { QuestionProps } from '../model/questionTypes'
 
 import styles from './QuestionItem.module.css'
 
-type Props = QuestionProps & {
-    onMenuOpen: (questionId: number, anchorEl: HTMLButtonElement) => void
-    isMenuOpen: boolean
-}
-
-export const QuestionItem = ({ question, onMenuOpen, isMenuOpen }: Props) => {
+export const QuestionItem = ({ question, onMenuOpen, isMenuOpen }: QuestionProps) => {
     const [isItemOpen, setIsItemOpen] = useState(false)
-    
     const optionsRef = useRef<HTMLButtonElement>(null)
     const contentId = useId()
     
@@ -25,10 +19,9 @@ export const QuestionItem = ({ question, onMenuOpen, isMenuOpen }: Props) => {
     const handleOptionsClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation()
         
-        const anchorEl = optionsRef.current
-        if (!anchorEl) return
-        
-        onMenuOpen(question.id, anchorEl)
+        if (optionsRef.current) {
+            onMenuOpen(question.id, optionsRef.current)
+        }
     }
     
     return (
