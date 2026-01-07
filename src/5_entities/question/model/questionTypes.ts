@@ -1,6 +1,6 @@
 import type { Skill } from '@/5_entities/skill'
 import type { Specialization } from '@/5_entities/specialization'
-import type { AuthorShort, BaseApiResponse } from '@/6_shared/model'
+import type { AuthorShort } from '@/6_shared/model'
 
 export type Question = {
     id: number
@@ -22,12 +22,4 @@ export type Question = {
     updatedBy: AuthorShort
     questionSpecializations: Specialization[]
     questionSkills: Skill[]
-}
-
-export type QuestionsApiResponse = BaseApiResponse<Question>
-
-export type QuestionProps = {
-    question: Question
-    onMenuOpen: (questionId: number, anchorEl: HTMLButtonElement) => void
-    isMenuOpen: boolean
 }

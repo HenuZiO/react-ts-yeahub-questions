@@ -10,7 +10,7 @@ export const SkillIcon = ({ src, title }: SkillIconProps) => {
     const [hasError, setHasError] = useState(false)
     
     if (hasError) {
-        return <WireframingIcon size={20} aria-hidden="true" />
+        return <WireframingIcon size={20} aria-hidden='true' />
     }
     
     return (
@@ -19,7 +19,7 @@ export const SkillIcon = ({ src, title }: SkillIconProps) => {
             alt={title}
             width={20}
             height={20}
-            loading="lazy"
+            loading='lazy'
             onError={() => setHasError(true)}
         />
     )

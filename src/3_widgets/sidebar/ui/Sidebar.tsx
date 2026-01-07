@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router'
 import { Button } from '@/6_shared/ui/button'
 import { cn } from '@/6_shared/lib/utils/classnames'
 import { YeaLogo } from '@/6_shared/ui/logo'
@@ -6,12 +7,11 @@ import { YeaLogo } from '@/6_shared/ui/logo'
 import { ChatCircleText, ChevroneDownIcon, LogoutIcon, SendSquareIcon } from '@/6_shared/ui/icon'
 
 import { SIDEBAR_ITEMS } from '../config/menuConfig'
-import type { RenderGroupProps, SidebarLinkItem } from '../model/menuTypes'
+import type { SidebarLinkItem, SidebarNavGroupProps } from '../model/menuTypes'
 
 import styles from './Sidebar.module.css'
-import { Link } from 'react-router'
 
-const renderNavLink = (item: SidebarLinkItem) => {
+const SidebarNavLink = (item: SidebarLinkItem) => {
     const { id, href, label, Icon } = item
     
     return (
@@ -24,7 +24,7 @@ const renderNavLink = (item: SidebarLinkItem) => {
     )
 }
 
-const renderNavGroup = (props: RenderGroupProps) => {
+const SidebarNavGroup = (props: SidebarNavGroupProps) => {
     const { item, isOpen, onToggle } = props
     const { id, label, Icon, children } = item
     
@@ -107,13 +107,13 @@ export const Sidebar = () => {
                 <ul className={styles.nav__list}>
                     {SIDEBAR_ITEMS.map(item => {
                         if (item.type === 'link') {
-                            return renderNavLink(item)
+                            return SidebarNavLink(item)
                         }
                         
                         if (item.type === 'group') {
                             const isOpen = expanded[item.id]
                             
-                            return renderNavGroup({
+                            return SidebarNavGroup({
                                 item,
                                 isOpen,
                                 onToggle: () => handleGroupToggle(item.id)

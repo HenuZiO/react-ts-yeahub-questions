@@ -1,6 +1,7 @@
 import { baseApi } from '@/6_shared/api'
-import type { QuestionsQueryParams, QuestionsQueryResult } from '../model/questionQueryTypes'
-import type { Question, QuestionsApiResponse } from '../model/questionTypes'
+
+import type { QuestionsApiResponse, QuestionsQueryParams, QuestionsQueryResult } from '../model/questionApiTypes'
+import type { Question } from '../model/questionTypes'
 
 export const questionApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({

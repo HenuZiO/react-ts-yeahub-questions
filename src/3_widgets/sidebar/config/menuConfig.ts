@@ -1,11 +1,15 @@
-import type { SidebarItem } from '@/3_widgets/sidebar/model/menuTypes'
+import type { SidebarItem } from '../model/menuTypes'
 
 import {
-    BookIcon, BookmarkSimple,
+    BookIcon,
+    BookmarkSimple,
     BroadcastIcon,
-    HomeIcon, ListMagnifyingGlassIcon,
-    NotebookIcon, PencilSimple,
-    StudentIcon, UserHeart,
+    HomeIcon,
+    ListMagnifyingGlassIcon,
+    NotebookIcon,
+    PencilSimple,
+    StudentIcon,
+    UserHeart,
     UserRoundedIcon
 } from '@/6_shared/ui/icon'
 

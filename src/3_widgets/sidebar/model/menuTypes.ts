@@ -16,7 +16,7 @@ export type SidebarGroupItem = SidebarBaseItem & {
     children: SidebarLinkItem[]
 }
 
-export type RenderGroupProps = {
+export type SidebarNavGroupProps = {
     item: SidebarGroupItem,
     isOpen: boolean,
     onToggle: () => void

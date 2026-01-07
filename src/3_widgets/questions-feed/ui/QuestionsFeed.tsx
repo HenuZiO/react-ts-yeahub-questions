@@ -10,16 +10,26 @@ import { Section } from '@/6_shared/ui/section'
 import { SectionTitle } from '@/6_shared/ui/section-title'
 
 export const QuestionsFeed = () => {
-    const queryParams = useAppSelector(selectQuestionsQueryParams)
-    const { data, isLoading } = useGetQuestionsQuery(queryParams)
-    
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [activeQuestionId, setActiveQuestionId] = useState<number | null>(null)
     
     const menuAnchorRef = useRef<HTMLButtonElement>(null)
     
+    const queryParams = useAppSelector(selectQuestionsQueryParams)
+    const { data, isLoading } = useGetQuestionsQuery(queryParams)
+    
     if (isLoading) {
-        return <div>Идет загрузка данных…</div>
+        return (
+            <Section>
+                <SectionTitle>
+                    Вопросы для собеседований
+                </SectionTitle>
+                
+                <div>
+                    Идет загрузка данных…
+                </div>
+            </Section>
+        )
     }
     
     const questionsList = data?.questions ?? []

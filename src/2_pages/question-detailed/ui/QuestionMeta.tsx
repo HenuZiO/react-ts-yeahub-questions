@@ -3,13 +3,13 @@ import { useAppDispatch } from '@/1_app/store'
 import { resetFilters, toggleSkill } from '@/4_features/questions-filters'
 import type { Question } from '@/5_entities/question'
 import { Section } from '@/6_shared/ui/section'
+import { SectionTitle } from '@/6_shared/ui/section-title'
 import { QuestionMetaChip } from '@/6_shared/ui/question-meta-chip'
 import { FilterChip } from '@/6_shared/ui/filter-chip'
 import { getSkillIcon } from '@/6_shared/lib/utils/skillIcon'
 import { routes } from '@/6_shared/config/routes'
 
 import styles from './QuestionMeta.module.css'
-import { SectionTitle } from '@/6_shared/ui/section-title'
 
 type QuestionMetaProps = {
     question: Question

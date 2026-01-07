@@ -1,7 +1,6 @@
 import { baseApi } from '@/6_shared/api'
 
-import type { SkillsApiResponse } from '../model/skillTypes'
-import type { SkillsQueryResult, SkillsQueryParams } from '../model/skillsQueryTypes'
+import type { SkillsApiResponse, SkillsQueryResult, SkillsQueryParams } from '../model/skillsApiTypes'
 
 export const skillApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({

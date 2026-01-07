@@ -1,3 +1,5 @@
+import type { BaseApiResponse } from '@/6_shared/model'
+
 import type { Question } from './questionTypes'
 
 export type QuestionsQueryParams = {
@@ -18,3 +20,5 @@ export type QuestionsQueryResult = {
     limit: number
     total: number
 }
+
+export type QuestionsApiResponse = BaseApiResponse<Question>

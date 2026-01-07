@@ -1,21 +1,17 @@
-import React, { useLayoutEffect, useState, useRef } from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 
-type UsePopoverParams = {
+type usePopoverProps = {
     anchorRef: React.RefObject<HTMLElement | null>
     isOpen: boolean
     offset?: number
     viewportPadding?: number
 }
 
-export const usePopover = (props: UsePopoverParams) => {
+export const usePopover = (props: usePopoverProps) => {
     const { anchorRef, isOpen, offset = 8, viewportPadding = 12 } = props
     
+    const [position, setPosition] = useState<React.CSSProperties>({ top: 0, left: 0 })
     const popoverRef = useRef<HTMLDivElement>(null)
-    
-    const [position, setPosition] = useState<React.CSSProperties>({
-        top: 0,
-        left: 0
-    })
     
     useLayoutEffect(() => {
         if (!isOpen) return

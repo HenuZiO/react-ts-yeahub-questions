@@ -14,7 +14,6 @@ export const Section = (props: SectionProps) => {
     
     return (
         <section className={cn(styles.section, className)}>
-            
             {imageSrc && (
                 <div className={styles.image__wrapper}>
                     <img

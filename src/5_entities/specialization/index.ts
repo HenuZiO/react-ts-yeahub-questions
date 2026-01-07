@@ -1,2 +1,3 @@
 // Types
-export type { Specialization, SpecializationsApiResponse } from './model/specializationTypes'
+export type { Specialization } from './model/specializationTypes'
+export type { SpecializationsApiResponse } from './model/specializationApiTypes'

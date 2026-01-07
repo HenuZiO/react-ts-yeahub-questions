@@ -1,4 +1,4 @@
-import type { PropsWithChildren, SVGProps } from 'react'
+import type { SVGProps } from 'react'
 
 export type IconProps = {
     size?: number
@@ -7,6 +7,3 @@ export type IconProps = {
     className?: string
 } & Omit<SVGProps<SVGSVGElement>, 'color'>
 
-export type BaseIconProps = PropsWithChildren<IconProps & {
-    viewBox: string
-}>

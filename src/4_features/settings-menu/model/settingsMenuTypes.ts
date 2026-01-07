@@ -1,8 +1,3 @@
-import React from 'react'
+import type { MenuItemProps } from '@/6_shared/model'
 
-export type SettingsMenuItem = {
-    id: string
-    label: string
-    href: string
-    Icon: React.ComponentType<{ size?: number }>
-}
+export type SettingsMenuItemProps = MenuItemProps
