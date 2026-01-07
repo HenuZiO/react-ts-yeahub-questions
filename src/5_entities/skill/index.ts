@@ -2,5 +2,5 @@
 export { useGetSkillsQuery } from './api/skillApi'
 
 // Types
-export type { Skill, SkillsApiResponse } from './model/skillTypes'
-export type { SkillsQueryParams, SkillsQueryResult } from './model/skillsApiTypes'
+export type { Skill } from './model/skillTypes'
+export type { SkillsApiResponse, SkillsQueryParams, SkillsQueryResult } from './model/skillsApiTypes'
