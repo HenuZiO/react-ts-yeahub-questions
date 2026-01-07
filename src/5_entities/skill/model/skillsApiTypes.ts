@@ -1,3 +1,5 @@
+import type { BaseApiResponse } from '@/6_shared/model'
+
 import type { Skill } from './skillTypes'
 
 export type SkillsQueryParams = {
@@ -14,3 +16,5 @@ export type SkillsQueryResult = {
     limit: number
     total: number
 }
+
+export type SkillsApiResponse = BaseApiResponse<Skill>

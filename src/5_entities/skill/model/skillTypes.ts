@@ -1,5 +1,5 @@
 import type { Specialization } from '@/5_entities/specialization'
-import type { AuthorShort, BaseApiResponse } from '@/6_shared/model'
+import type { AuthorShort } from '@/6_shared/model'
 
 export type Skill = {
     id: number
@@ -12,4 +12,3 @@ export type Skill = {
     specializations: Specialization[]
 }
 
-export type SkillsApiResponse = BaseApiResponse<Skill>

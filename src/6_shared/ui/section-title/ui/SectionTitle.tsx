@@ -8,9 +8,7 @@ type SectionTitleProps = {
     className?: string
 }
 
-export const SectionTitle = (props: SectionTitleProps) => {
-    const { children, className } = props
-    
+export const SectionTitle = ({ children, className }: SectionTitleProps) => {
     return (
         <h2 className={cn(styles.section__title, className)}>
             {children}

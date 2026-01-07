@@ -1,4 +1,10 @@
-import type { BaseIconProps } from '../model/iconTypes'
+import type { PropsWithChildren } from 'react'
+
+import type { IconProps } from '../model/iconTypes'
+
+type BaseIconProps = PropsWithChildren<IconProps & {
+    viewBox: string
+}>
 
 export const BaseIcon = (props: BaseIconProps) => {
     const {

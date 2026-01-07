@@ -1,9 +1,13 @@
 import { Link } from 'react-router'
 
 import { getQuestionMenuItems } from '../config/questionMenuConfig'
-import type { QuestionMenuProps } from '../model/questionMenuTypes'
 
 import styles from './QuestonMenu.module.css'
+
+type QuestionMenuProps = {
+    questionId: number
+    onSelect?: () => void
+}
 
 export const QuestionMenu = ({ questionId, onSelect }: QuestionMenuProps) => {
     const questions = getQuestionMenuItems(questionId)

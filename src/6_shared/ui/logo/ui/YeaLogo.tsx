@@ -1,8 +1,10 @@
 import { cn } from '@/6_shared/lib/utils/classnames'
 
-import type { YeaLogoProps } from '../model/YeaLogoTypes'
-
 import styles from './YeaLogo.module.css'
+
+type YeaLogoProps = {
+    isSidebarHidden: boolean
+}
 
 export const YeaLogo = ({ isSidebarHidden }: YeaLogoProps) => {
     const textLogoClassName = cn(styles.logo__text, isSidebarHidden && styles.logo__hidden)

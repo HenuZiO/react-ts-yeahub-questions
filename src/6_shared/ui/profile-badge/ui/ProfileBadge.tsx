@@ -1,7 +1,8 @@
 import { Button } from '@/6_shared/ui/button'
 
-import styles from './ProfileBadge.module.css'
 import { SealCheck } from '@/6_shared/ui/icon'
+
+import styles from './ProfileBadge.module.css'
 
 export const ProfileBadge = () => {
     return (

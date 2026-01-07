@@ -1,8 +1,8 @@
 import { routes } from '@/6_shared/config/routes'
 
-import type { QuestionMenuItemProps } from '../model/questionMenuTypes'
-
 import { ClockCounterClockwise, OpenSidebarIcon, StudentIcon } from '@/6_shared/ui/icon'
+
+import type { QuestionMenuItemProps } from '../model/questionMenuTypes'
 
 export const getQuestionMenuItems = (questionId: number): QuestionMenuItemProps[] => [
     {

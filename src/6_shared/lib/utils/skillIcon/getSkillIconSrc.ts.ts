@@ -9,7 +9,7 @@ export const SKILL_ICON_MAP: Record<string, string> = {
     html: "html5",
 };
 
-export const getSkillIcon = (name?: string) => {
+export const getSkillIcon = (name: string) => {
     if (!name) return undefined;
     
     const normalized = name.toLowerCase().replace(/[\s.-]/g, "");

@@ -3,11 +3,17 @@ import { QuestionMetaChip } from '@/6_shared/ui/question-meta-chip'
 
 import { ChevroneDownIcon, ChevroneUpIcon } from '@/6_shared/ui/icon'
 
-import type { QuestionProps } from '../model/questionTypes'
+import type { Question } from '../model/questionTypes'
 
 import styles from './QuestionItem.module.css'
 
-export const QuestionItem = ({ question, onMenuOpen, isMenuOpen }: QuestionProps) => {
+type QuestionItemProps = {
+    question: Question
+    onMenuOpen: (questionId: number, anchorEl: HTMLButtonElement) => void
+    isMenuOpen: boolean
+}
+
+export const QuestionItem = ({ question, onMenuOpen, isMenuOpen }: QuestionItemProps) => {
     const [isItemOpen, setIsItemOpen] = useState(false)
     const optionsRef = useRef<HTMLButtonElement>(null)
     const contentId = useId()

@@ -1,9 +1,14 @@
 import { createPaginationItems } from '@/6_shared/lib/utils/pagination'
+
 import { ArrowLeftIcon, ArrowRightIcon } from '@/6_shared/ui/icon'
 
-import type { PaginationProps } from '../model/PaginationTypes'
-
 import styles from './Pagination.module.css'
+
+type PaginationProps = {
+    page: number
+    totalPages: number
+    onPageChange: (page: number) => void
+}
 
 export const Pagination = (props: PaginationProps) => {
     const { page, totalPages, onPageChange } = props

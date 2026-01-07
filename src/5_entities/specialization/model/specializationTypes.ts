@@ -1,4 +1,4 @@
-import type { AuthorShort, BaseApiResponse } from '@/6_shared/model'
+import type { AuthorShort } from '@/6_shared/model'
 
 export type Specialization = {
     id: number
@@ -9,5 +9,3 @@ export type Specialization = {
     updatedAt: string
     createdBy: AuthorShort | null
 }
-
-export type SpecializationsApiResponse = BaseApiResponse<Specialization>

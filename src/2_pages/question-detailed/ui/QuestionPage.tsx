@@ -3,6 +3,7 @@ import { useGetQuestionByIdQuery } from '@/5_entities/question'
 import { Breadcrumbs } from '@/6_shared/ui/breadcrumbs'
 import type { BreadcrumbItem } from '@/6_shared/ui/breadcrumbs'
 import { Container } from '@/6_shared/ui/container'
+import { Section } from '@/6_shared/ui/section'
 
 import { QuestionDescription } from './QuestionDescription'
 import { QuestionShortAnswer } from './QuestionShortAnswer'
@@ -19,11 +20,33 @@ export const QuestionPage = () => {
     const { data: question, isLoading, isError } = useGetQuestionByIdQuery(Number(questionId))
     
     if (isLoading) {
-        return <div>Идет загрузка данных вопроса…</div>
+        return (
+            <Container className={styles.sections}>
+                <div className={styles.main}>
+                    <Section>
+                        Идет загрузка данных вопроса...
+                    </Section>
+                </div>
+                
+                <div className={styles.additional}>
+                    <Section>
+                        Идет загрузка данных вопроса...
+                    </Section>
+                </div>
+            </Container>
+        )
     }
     
     if (isError || !question) {
-        return <div>Вопрос не найден</div>
+        return (
+            <Container className={styles.sections}>
+                <div className={styles.main}>
+                    <Section>
+                        Вопрос не найден
+                    </Section>
+                </div>
+            </Container>
+        )
     }
     
     const firstSkill = question.questionSkills[0]

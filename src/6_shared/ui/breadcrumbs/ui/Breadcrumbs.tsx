@@ -1,11 +1,14 @@
 import { Link } from 'react-router'
 
-import type { BreadcrumbsProps } from '../model/BreadcrumbsTypes'
+import type { BreadcrumbItem } from '../model/breadcrumbsTypes'
 
 import styles from './Breadcrumbs.module.css'
 
+export type BreadcrumbsProps = {
+    items: BreadcrumbItem[]
+}
+
 export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
-    
     if (!items.length) return null
     
     return (

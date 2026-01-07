@@ -1,30 +1,32 @@
+import { routes } from '@/6_shared/config/routes'
+
 import { BookmarkSimple, LogoutIcon, SettingsIcon, UserRoundedIcon } from '@/6_shared/ui/icon'
 
-import type { SettingsMenuItem } from '../model/settingsMenuTypes'
+import type { SettingsMenuItemProps } from '../model/settingsMenuTypes'
 
-export const SETTINGS_MENU_ITEMS: SettingsMenuItem[] = [
+export const SETTINGS_MENU_ITEMS: SettingsMenuItemProps[] = [
     {
         id: 'profile',
         label: 'Мой профиль',
-        href: '/',
+        href: routes.home,
         Icon: UserRoundedIcon
     },
     {
         id: 'saved',
         label: 'Сохранённые',
-        href: '/',
+        href: routes.home,
         Icon: BookmarkSimple
     },
     {
         id: 'settings',
         label: 'Настройки',
-        href: '/',
+        href: routes.home,
         Icon: SettingsIcon
     },
     {
         id: 'logout',
         label: 'Выйти',
-        href: '/',
+        href: routes.home,
         Icon: LogoutIcon
     }
 ]
