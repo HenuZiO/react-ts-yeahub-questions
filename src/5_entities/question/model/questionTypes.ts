@@ -28,4 +28,6 @@ export type QuestionsApiResponse = BaseApiResponse<Question>
 
 export type QuestionProps = {
     question: Question
+    onMenuOpen: (questionId: number, anchorEl: HTMLButtonElement) => void
+    isMenuOpen: boolean
 }
