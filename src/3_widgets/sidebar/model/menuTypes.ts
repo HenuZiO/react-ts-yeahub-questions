@@ -16,10 +16,4 @@ export type SidebarGroupItem = SidebarBaseItem & {
     children: SidebarLinkItem[]
 }
 
-export type SidebarNavGroupProps = {
-    item: SidebarGroupItem,
-    isOpen: boolean,
-    onToggle: () => void
-}
-
 export type SidebarItem = SidebarLinkItem | SidebarGroupItem
