@@ -1,14 +1,17 @@
 import { useParams } from 'react-router'
 import { useGetQuestionByIdQuery } from '@/5_entities/question'
 import { Breadcrumbs } from '@/6_shared/ui/breadcrumbs'
-import type { BreadcrumbItem } from '@/6_shared/ui/breadcrumbs'
 import { Container } from '@/6_shared/ui/container'
-import { Section } from '@/6_shared/ui/section'
 
-import { QuestionDescription } from './QuestionDescription'
-import { QuestionShortAnswer } from './QuestionShortAnswer'
-import { QuestionLongAnswer } from './QuestionLongAnswer'
-import { QuestionMeta } from './QuestionMeta'
+import { buildQuestionPageCrumbs } from '../lib/buildQuestionPageCrumbs'
+
+import { QuestionDescription } from './blocks/QuestionDescription'
+import { QuestionShortAnswer } from './blocks/QuestionShortAnswer'
+import { QuestionLongAnswer } from './blocks/QuestionLongAnswer'
+import { QuestionMeta } from './blocks/QuestionMeta'
+
+import { QuestionPageSkeleton } from './fallbacks/QuestionPageSkeleton'
+import { QuestionPageError } from './fallbacks/QuestionPageError'
 
 import styles from './QuestionPage.module.css'
 
@@ -19,48 +22,10 @@ export const QuestionPage = () => {
     
     const { data: question, isLoading, isError } = useGetQuestionByIdQuery(Number(questionId))
     
-    if (isLoading) {
-        return (
-            <Container className={styles.sections}>
-                <div className={styles.main}>
-                    <Section>
-                        Идет загрузка данных вопроса...
-                    </Section>
-                </div>
-                
-                <div className={styles.additional}>
-                    <Section>
-                        Идет загрузка данных вопроса...
-                    </Section>
-                </div>
-            </Container>
-        )
-    }
+    if (isLoading) return <QuestionPageSkeleton />
+    if (isError || !question) return <QuestionPageError />
     
-    if (isError || !question) {
-        return (
-            <Container className={styles.sections}>
-                <div className={styles.main}>
-                    <Section>
-                        Вопрос не найден
-                    </Section>
-                </div>
-            </Container>
-        )
-    }
-    
-    const firstSkill = question.questionSkills[0]
-    
-    const skillCrumb: BreadcrumbItem | null = firstSkill
-        ? { label: firstSkill.title, to: `/questions?skills=${firstSkill.id}`}
-        : null
-    
-    const crumbs: BreadcrumbItem[] = [
-        { label: 'Обучение', to: '/' },
-        { label: 'Список вопросов', to: '/questions' },
-        ...(skillCrumb ? [skillCrumb] : []),
-        { label: question.title ?? 'Загрузка…' }
-    ]
+    const crumbs = buildQuestionPageCrumbs(question)
     
     return (
         <>

@@ -1,21 +1,17 @@
 import { QuestionsFeed } from '@/3_widgets/questions-feed'
 import { QuestionsFiltersSidebar } from '@/3_widgets/questions-filters-sidebar'
 import { Breadcrumbs } from '@/6_shared/ui/breadcrumbs'
-import type { BreadcrumbItem } from '@/6_shared/ui/breadcrumbs'
 import { Container } from '@/6_shared/ui/container'
 
-import styles from './QuestionsPage.module.css'
+import { QUESTIONS_PAGE_BREADCRUMBS } from '../config/questionPageBreadcrumbsConfig'
 
-const crumbs: BreadcrumbItem[] = [
-    { label: 'Обучение', to: '/' },
-    { label: 'Список вопросов' }
-]
+import styles from './QuestionsPage.module.css'
 
 export const QuestionsPage = () => {
     return (
         <>
             <Container>
-                <Breadcrumbs items={crumbs} />
+                <Breadcrumbs items={QUESTIONS_PAGE_BREADCRUMBS} />
             </Container>
 
             <Container className={styles.sections}>
